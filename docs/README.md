@@ -14,10 +14,10 @@ Planned features:
 
 #Links:
 
-[API Endpoints](docs/api-endpoints.md)
-[Sample State](docs/sample-state.md)
-[Component Hierarchy](docs/component-hierarchy.md)
-[Schema](docs/schema.md)
+[API Endpoints](api-endpoints.md)
+[Sample State](sample-state.md)
+[Component Hierarchy](component-hierarchy.md)
+[Schema](schema.md)
 
 
 # Heroku Links
