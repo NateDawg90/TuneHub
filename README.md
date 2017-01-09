@@ -9,18 +9,18 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
+TuneHub is a web application inspired by Bandcamp built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Notes
-- [ ] Notebooks for organizing notes
-- [ ] Tags
-- [ ] Rich Text Editing
-- [ ] Infinite Scroll
+- [ ] Artist Pages
+- [ ] Song player with locking playbar
+- [ ] Search function
+- [ ] Ability for fans to follow artists or other fans
+- [ ] Ability for artists to upload and fans to download songs
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -42,29 +42,27 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Artist, Fan, Album, and Song Models, API, and components (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** All of the above can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: Associations (.5 day)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Songs belong to Albums. Albums belong to artists and fans(?). Follows have a follower and followee. All can be created, read, edited and destroyed through the API.
 
-### Phase 4: Tags (1 days)
+### Phase 4: Artist Page (1 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Visualization of Artist info.
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+### Phase 5: Search Function and top nav bar  (2 days)
 
-**objective:** Allow rich text editing of notes.
+**Objective:** Search bar is locked to the top of the screen on all screens except sign-in. Results can come from Artists, albums, songs, and fans.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: - Song player and bottom-locked bar (2 day)
 
-**objective:** Add infinite scroll to Notes Index
+**Objective:** Add song play function. Add a bar with play/pause, volume, and hamburger button
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Upload / Download Songs
+- [ ] Purchase Songs
