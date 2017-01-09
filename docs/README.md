@@ -16,6 +16,7 @@ Planned features:
 
 #Links:
 
+* [Wireframes](wireframes)
 * [API Endpoints Link](api-endpoints.md)
 * [Sample State](sample-state.md)
 * [Component Hierarchy](component-hierarchy.md)
