@@ -29,6 +29,5 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
   SessionAPI.logout()
-    .then(user => dispatch(receiveCurrentUser(user)))
-    // hashHistory.push("/")
+    .then(user => dispatch(receiveCurrentUser(null)))
 );
