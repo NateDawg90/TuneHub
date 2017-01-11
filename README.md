@@ -19,8 +19,9 @@ sufficient CSS styling:
 - [ ] Artist Pages
 - [ ] Song player with locking playbar
 - [ ] Search function
-- [ ] Ability for fans to follow artists or other fans
 - [ ] Ability for artists to upload and fans to download songs
+- [ ] Ability for fans to review albums (BONUS)
+- [ ] Ability for fans to follow artists or other fans (BONUS)
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -42,14 +43,14 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Artist, Fan, Album, and Song Models, API, and components (2 days)
+### Phase 2: Artist, Fan, Album, Review and Song Models, API, and components (2 days)
 
 **Objective:** All of the above can be created, read, edited and destroyed through
 the API.
 
 ### Phase 3: Associations (.5 day)
 
-**Objective:** Songs belong to Albums. Albums belong to artists and fans(?). Follows have a follower and followee. All can be created, read, edited and destroyed through the API.
+**Objective:** Songs belong to Albums. Albums belong to artists and fans(?). Reviews belong to fans and albums. Follows have a follower and followee. All can be created, read, edited and destroyed through the API.
 
 ### Phase 4: Artist Page (1 days)
 
