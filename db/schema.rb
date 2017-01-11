@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170110232633) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
-    t.string   "type",            null: false
+    t.string   "type"
     t.string   "name"
     t.string   "location"
     t.string   "description"
