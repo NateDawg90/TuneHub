@@ -4,7 +4,10 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "" };
+		this.state = {
+			username: "",
+			password: ""
+		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -55,7 +58,7 @@ class SessionForm extends React.Component {
 			<div className="login-form-container">
 				<h2 className='heading'>
 
-					{ this.props.formType } = login ? "Login" : "Sign Up"
+					{ this.props.formType === "login" ? "Login" : "Sign Up"}
 				</h2>
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
@@ -63,14 +66,14 @@ class SessionForm extends React.Component {
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
-						<label> Username:
+						<label> Username
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
 						<br/>
-						<label> Password:
+						<label> Password
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}

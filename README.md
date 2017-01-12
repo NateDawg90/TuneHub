@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://bctunehub.herokuapp.com/
 [trello]: https://trello.com/b/UsLIzPHC/tunehub
 
 ## Minimum Viable Product
