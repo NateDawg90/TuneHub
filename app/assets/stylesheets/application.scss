@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ input {
+   margin: 10px;
+ }
+
+ h2 {
+   font-size: 15px;
+ }
+
+.root {
+   font-family: "Arial Black";
+   font-size: 14px;
+   background: linear-gradient(-45deg, indigo, grey);
+   color: white;
+   min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: grey;
+  // margin: 10px;
+  padding: 10px;
+}
+
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.splash-logo {
+  // display: block;
+  height: 30px;
+  width: 30px;
+  background-image: image-url("tuning-fork.jpg");
+  background-size: 100%;
+}
+
+.header-link {
+  text-decoration: none;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  color: white;
+
+}
+
+.login-signup {
+  display: flex;
+}
+
+.login-signup > a {
+  color: white;
+}
