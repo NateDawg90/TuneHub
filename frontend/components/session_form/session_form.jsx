@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Alerts from '../error/alerts';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -60,6 +61,7 @@ class SessionForm extends React.Component {
 
 					{ this.props.formType === "login" ? "Login" : "Sign Up"}
 				</h2>
+				<div className='top-divider'></div>
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
 
@@ -80,7 +82,8 @@ class SessionForm extends React.Component {
 								className="login-input" />
 						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+							<Alerts errors={ this.props.errors }/>
+						<input className='login-submit' type="submit" value="Submit" />
 					</div>
 				</form>
 			</div>

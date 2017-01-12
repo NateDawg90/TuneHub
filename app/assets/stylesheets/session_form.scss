@@ -1,0 +1,32 @@
+.login-form-container {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 30px;
+}
+
+.login-form-box {
+  display: flex;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.heading {
+  margin-top: 20px;
+}
+
+.top-divider {
+  height: 1px;
+  border-top: 2px dotted #ccc;
+  margin: 36px 0 28px 0;
+}
+
+.login-submit {
+  width: 200px;
+}

@@ -43,26 +43,21 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Artist, Fan, Album, Review and Song Models, API, and components (2 days)
-
-**Objective:** All of the above can be created, read, edited and destroyed through
-the API.
-
-### Phase 3: Associations (.5 day)
-
-**Objective:** Songs belong to Albums. Albums belong to artists and fans(?). Reviews belong to fans and albums. Follows have a follower and followee. All can be created, read, edited and destroyed through the API.
-
-### Phase 4: Artist Page (1 days)
+### Phase 2: Artist Pages (2 days)
 
 **Objective:** Visualization of Artist info.
 
-### Phase 5: Search Function and top nav bar  (2 days)
+### Phase 3: Song Player (.5 day)
+
+**Objective:** Plays songs.
+
+### Phase 4: Search Function & top nave bar (1 days)
 
 **Objective:** Search bar is locked to the top of the screen on all screens except sign-in. Results can come from Artists, albums, songs, and fans.
 
-### Phase 6: - Song player and bottom-locked bar (2 day)
+### Phase 5: Follows  (2 days)
 
-**Objective:** Add song play function. Add a bar with play/pause, volume, and hamburger button
+**Objective:** Fans follow artists or other fans
 
 ### Bonus Features (TBD)
 - [ ] Upload / Download Songs

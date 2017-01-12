@@ -5,16 +5,10 @@ import Footer from './footer/footer';
 
 const App = ({ children }) => (
   <div className="root">
-    <header className="header">
+    <header className='header'>
       <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet" />
-      <div className="left-nav">
-        <div className='splash-logo'></div>
-        <Link to="/" className="header-link">
-          <h1>TuneHub</h1>
-        </Link>
 
-      </div>
-      <GreetingContainer />
+      <GreetingContainer/>
     </header>
 
     { children }

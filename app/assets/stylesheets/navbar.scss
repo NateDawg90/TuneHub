@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: black;
+  background: white;
+  // margin: 10px;
+  padding: 10px;
+}
+
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.splash-logo {
+  // display: block;
+  height: 30px;
+  width: 30px;
+  background-image: image-url("tuning-fork.jpg");
+  background-size: 100%;
+}
+
+.header-link {
+  text-decoration: none;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.slogan {
+
+}
+
+.login-signup > a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-signup {
+  display: flex;
+  margin: 10px;
+}
+
+.header-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-button {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+}
