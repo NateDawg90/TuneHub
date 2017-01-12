@@ -4,10 +4,12 @@ import { Link } from 'react-router';
 const sessionLinks = () => (
   <div className='header'>
     <div className="left-nav">
-      <div className='splash-logo'></div>
       <Link to="/" className="header-link">
-        <h1>TuneHub</h1>
+        <div className='splash-logo'></div>
+        <h1 className='tunehub'>TuneHub</h1>
       </Link>
+      <span className='slogan'>Connecting people with tunes and their creators
+      </span>
     </div>
 
     <nav className="login-signup">

@@ -6,13 +6,13 @@
   color: black;
   background: white;
   // margin: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 
 .left-nav {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
 }
 
 .splash-logo {
@@ -21,19 +21,29 @@
   width: 30px;
   background-image: image-url("tuning-fork.jpg");
   background-size: 100%;
+  margin: 5px;
 }
 
 .header-link {
   text-decoration: none;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade';
   font-size: 35px;
+  display: flex;
+  align-items: center;
   color: black;
   font-weight: bold;
   margin: 15px;
 }
 
-.slogan {
+.tunehub {
+  margin: 5px;
+}
 
+.slogan {
+  color: blue;
+  font-size: 14px;
+  font-family: comic;
+  margin-left: 20px;
 }
 
 .login-signup > a {
