@@ -2,10 +2,10 @@
   width: 650px;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  color: white;
+  // color: white;
   margin-top: 30px;
+  background-color: white;
+  color: black;
 }
 
 .login-form-box {
@@ -33,18 +33,6 @@
   align-self: center;
 }
 
-.login-submit {
-  width: 200px;
-  border: none;
-  border-radius: 25px;
-  background: #00a1c6;
-  color: white;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  align-self: center;
-}
 
 .input {
   display: flex;
@@ -61,4 +49,18 @@
   font-size: 20px;
   width: 200px;
   height: 30px;
+}
+
+.login-submit {
+  width: 200px;
+  border: none;
+  border-radius: 25px;
+  background: #00a1c6;
+  color: white;
+  padding: 15px 32px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  align-self: center;
 }
