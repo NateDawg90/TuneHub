@@ -5,6 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ActiveRecord::Base.transaction do
+  User.destroy_all
+  Users = {
+    1: {
+      "name": "Metallica",
+      "id": 1,
+      "type": "artist",
+      "location": "San Francisco",
+      "description": "Heavy Metal band from the Bay Area"
+    },
+    2: {
+      "name": "Nathan Johnson",
+      id: 2,
+      "type": "fan",
+      "location": "San Francisco",
+    },
+    3: {
+      "name": "Arctic Monkeys",
+      id: 3,
+      "type": "artist",
+      "location": "London",
+      "description": "English Rock band from Sheffield"
+    }
+  }
+
+
 def generate_name
   random_words = [
     Faker::Team.creature.downcase,
