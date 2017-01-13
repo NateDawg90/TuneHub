@@ -1,4 +1,4 @@
-export const fetchAllArtist = () => {
+export const fetchAllArtists = () => {
   return $.ajax({
     method: 'GET',
     url: 'api/users'

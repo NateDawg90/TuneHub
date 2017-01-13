@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113014418) do
+ActiveRecord::Schema.define(version: 20170113182820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170113014418) do
     t.integer  "artist_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "track_url"
     t.index ["artist_id"], name: "index_tracks_on_artist_id", using: :btree
   end
 
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170113014418) do
     t.string   "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "image_url"
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 

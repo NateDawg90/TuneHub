@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
 
+gem 'rspotify'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
