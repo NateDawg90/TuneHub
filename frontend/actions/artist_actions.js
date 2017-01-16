@@ -6,7 +6,6 @@ export const CREATE_ARTIST         = 'CREATE_ARTIST';
 export const RECEIVE_NEW_ARTIST    = 'RECEIVE_NEW_ARTIST';
 export const RECEIVE_ARTIST_ERRORS = 'RECEIVE_ARTIST_ERRORS';
 
-
 export const receiveAllArtists = artists => ({
 	type: RECEIVE_ALL_ARTISTS,
 	artists
@@ -31,6 +30,17 @@ export const receiveArtistErrors = errors => ({
 export const requestAllArtists = () => (dispatch) => {
 	return APIUtil.fetchAllArtists()
 		.then(artists => dispatch(receiveAllArtists(artists)));
+};
+
+export const requestSampleArtists = () => (dispatch) => {
+	let artists = [];
+
+	for (let i = 0; i < 10; i++) {
+		let id = Math.floor(Math.random() * 1000);
+		artists.push(requestSingleArtist(id));
+	}
+
+	return artists;
 };
 
 export const requestSingleArtist = (id) => (dispatch) => {

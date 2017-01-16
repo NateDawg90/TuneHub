@@ -5,7 +5,9 @@ const ArtistIndexItem = ({ artist, router }) => (
   <li className="artist-index-item">
     <Link to={`/artists/${artist.id}`}>
       <span>{artist.id}</span>
-      <img src={artist.image_url} alt={artist.name} />
+      <img src={artist.image_url} alt={artist.name}>
+
+      </img>
       <span>{artist.name}</span>
     </Link>
   </li>

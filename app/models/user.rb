@@ -12,6 +12,7 @@
 #  description     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  image_url       :string
 #
 
 class User < ApplicationRecord
@@ -21,7 +22,9 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6  }, allow_nil: true
 
-  has_many :tracks
+  has_many :tracks,
+    foreign_key: :artist_id,
+    class_name: 'Track'
 
   after_initialize :ensure_session_token
 

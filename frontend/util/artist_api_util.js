@@ -19,3 +19,10 @@ export const createArtist = (user) => {
     data: { user }
   });
 };
+
+export const fetchRandomArtist = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/users/${id}`
+  });
+};

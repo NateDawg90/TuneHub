@@ -7,10 +7,11 @@
 #  artist_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  track_url  :string
 #
 
 class Track < ApplicationRecord
-  validates :name, :artist_id, :song_url, presence: true
+  validates :name, :artist_id, :track_url, presence: true
 
   belongs_to :artist,
     foreign_key: :artist_id,
