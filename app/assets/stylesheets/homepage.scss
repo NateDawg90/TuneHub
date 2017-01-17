@@ -1,9 +1,94 @@
 .artist-index {
   min-height: 500px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artist-display {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  background-color: blue;
+  text-decoration: none;
+  // position: relative;
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  color: white;
+  z-index: 1;
+
+}
+
+.artist-display {
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+
+.artist-display h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+
+.artist-profiles-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.splash-login {
+  padding: 10px;
+  background: blue;
+}
+
+.video {
+  width: 100%;
+  // position: absolute;
+  // z-index: -1;
+  opacity: 0.8;
+  left: 0;
+  top: 0;
 }
 
 .video-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+  text-align: center;
+}
 
+.video-container h3 {
+  font-size: 70px;
+  font-weight: bolder;
+  color: white;
+  width: 100%;
+  height: 50px;
+  // position: relative;
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  color: white;
+  z-index: 1;
+}
+
+.video-parent {
+  display: flex;
+  justify-content: center;
 }
 
 .home-page-message {

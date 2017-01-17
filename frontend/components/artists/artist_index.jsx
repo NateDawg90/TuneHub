@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import ArtistIndexItem from './artist_index_item';
+import {Link} from 'react-router';
 
 class ArtistsIndex extends Component {
   componentDidMount() {
     this.props.fetchSampleArtists();
+  }
+
+  signup(){
+    if (this.props.loggedIn){
+      this.props.router.push(`/artists/${this.props.loggedIn.id}`);
+    } else {
+      this.props.router.push("/signup");
+    }
   }
 
   render() {
@@ -11,21 +20,27 @@ class ArtistsIndex extends Component {
     return (
       <section className="artist-index">
         <div className="video-container">
-          <div className="home-page-message">
-            <h3>Find music you love</h3>
-          </div>
-          <h1>Discover Your favorite Music!</h1>
-            <video src="https://s3-us-west-1.amazonaws.com/musicianhub/musicianhubvid.mp4"
-              autoPlay
-              loop
-              className="video"/>
+          <h3>Discover Your favorite Music!</h3>
+          <Link
+            className='splash-login'
+            to="/signup"
+            activeClassName="current">Sign Up!
+          </Link>
+
+          <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484632582/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_prxrdq.mp4"
+            autoPlay
+            muted
+            loop
+            className="video"/>
         </div>
-        <div className="video-mask">
+        <div className="artist-display">
+          <h1>Check Out Artist Profiles!</h1>
+          <ul className='artist-profiles-container'>
+            {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} />)}
+          </ul>
 
         </div>
-        <ul>
-          {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} />)}
-        </ul>
+
         {children}
       </section>
     );
