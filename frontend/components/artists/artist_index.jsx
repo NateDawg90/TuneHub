@@ -3,8 +3,7 @@ import ArtistIndexItem from './artist_index_item';
 
 class ArtistsIndex extends Component {
   componentDidMount() {
-    this.props.fetchArtists();
-    debugger;
+    this.props.fetchSampleArtists();
   }
 
   render() {

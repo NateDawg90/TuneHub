@@ -12,7 +12,8 @@ const _nullArtist = Object.freeze({
   user_type: "",
   name: "",
   location: "",
-  description: ""
+  description: "",
+  tracks: []
 });
 
 const ArtistDetailReducer = (state = _nullArtist, action) => {

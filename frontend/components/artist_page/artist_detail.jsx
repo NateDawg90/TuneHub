@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndex from '../songs/song_index';
+import TrackIndex from '../tracks/track_index';
 
 class ArtistDetail extends React.Component {
   constructor(props){
@@ -11,7 +11,7 @@ class ArtistDetail extends React.Component {
   }
 
   activateEdit(){
-    if(this.state.edit ===false){
+    if(this.state.edit === false){
       this.setState({edit: true});
     } else {
       this.setState({edit: false});
@@ -24,24 +24,6 @@ class ArtistDetail extends React.Component {
     );
   }
 
-  // <SongIndexItem track={track}
-  //   key={idx}
-  //   edit={that.props.edit}
-  //   deleteSong={that.props.props.deleteSong}
-  //   addSong = {that.props.props.addSongToQueue}
-  //   artist = {that.props.props.artist}/>;
-  // <div className="track-player">
-  //   <button onClick={this.dispatchSong(track, this.props.artist)}
-  //     className="play-click">Play</button>
-  // </div>
-
-  description(){
-    return (
-      <p className="text">
-        {this.props.artist.description}
-      </p>
-    );
-  }
 
   cancel(){
     return (
@@ -53,7 +35,7 @@ class ArtistDetail extends React.Component {
   cancelEditTracks(){
     return (
         <button onClick={this.editTracks.bind(this)}
-                className="edit-songs-cancel">Cancel</button>
+                className="edit-tracks-cancel">Cancel</button>
     );
   }
 
@@ -72,14 +54,6 @@ class ArtistDetail extends React.Component {
     </div>);
   }
 
-  location(){
-    return (
-      <p className="artist-location">
-        {this.props.artist.location}
-      </p>
-    );
-  }
-
   update(field){
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -88,40 +62,34 @@ class ArtistDetail extends React.Component {
 
   render(){
     return (
-      <div className="artist-info">
+      <div className="artist-detail">
         <div className="artist-header">
           {this.artistHeader()}
-        </div>
-        <div className="left-hand-container">
-
           {this.image()}
-
-          <br></br>
-          <br></br>
-          <div className="description">Description
-            {this.location()}
-            <br></br>
-            <br></br>
-            {this.description()}
-          </div>
         </div>
 
-        <div className="right-hand-container">
-
-          <div className="songindex">
-            <header className="songs-header">
-              Tracks&nbsp;&nbsp;&nbsp;
+        <div className='artist-body'>
+          <div className="left-hand-container">
+            <header className="tracks-header">
+              Tracks
             </header>
             <ul>
-              <SongIndex props={this.props} />
+              <TrackIndex props={this.props} />
             </ul>
           </div>
-          {this.props.children}
+
+          <div className="right-hand-container">
+            <span className='description-header'>Description</span>
+
+            <div className='description'>{this.props.artist.description}</div>
+          </div>
+
         </div>
       </div>
     );
   }
 }
 
+// {this.props.children}
 
 export default ArtistDetail;

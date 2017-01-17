@@ -12,7 +12,6 @@ class Api::SessionsController < ApplicationController
         status: 401
       )
     end
-    # debugger
   end
 
   def destroy

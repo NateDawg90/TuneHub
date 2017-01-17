@@ -1,40 +1,45 @@
-.artist-info {
-  width: 900px;
-  margin: 0 auto;
+.artist-body {
   display: flex;
-  // justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.artist-detail {
+  width: 1000px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 100px;
   top: 50px;
 }
 
 .detail-image {
-  width: 50px;
-  height: 50px;
+  width: 270px;
+  height: 270px;
 }
 
 .artist-header h1{
   font-size: 40px;
+  align-self: center;
   font-weight: bold;
 }
 
 .artist-header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: solid black 2px;
-  width: 92%
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid black 4px;
+  width: 100%;
 }
 
-.invisible {
-  height: 50px;
-}
-//this is the img box
 .image {
   width: 300px;
   height: 300px;
   box-sizing: inherit;
   font-size: 22px;
 }
+
 //the actual image
 img {
   width: 100%;
@@ -42,17 +47,22 @@ img {
   border: solid black 2px;
 }
 
-.right-hand-container {
-  position: relative;
-  float: right;
-  right: 70px;
-  width: 450px;
+
+.description {
+  font-size: 17px;
+  padding: 20px;
+  vertical-align: middle;
 }
 
-.left-hand-container {
+.description-header {
+  width: 80%;
+  font-size: 30px;
+  font-weight: bold;
   position: relative;
-  float: left;
-  width: 304px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid black 2px;
 }
 
 .edit {
@@ -72,12 +82,16 @@ img {
   margin-left: 5px;
 }
 
-.bio {
-  border: solid black 2px;
-  width: inherit;
+.left-hand-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0px;
+  border: solid black 4px;
   box-sizing: border-box;
-  font-size: 22px;
-  padding: 20px;
+  font-size: 17px;
+  background-color: white;
+  color: black;
 }
 
 .name-submit {
@@ -88,12 +102,34 @@ img {
   padding-bottom: 2px;
 }
 
-.songindex {
-  padding: 0px;
-  border: solid black 2px;
-  width: inherit;
+.right-hand-container {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  max-height: 400px;
+  border: solid black 4px;
   box-sizing: border-box;
-  font-size: 22px;
+}
+
+.tracks-box {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+
+}
+
+.tracks-header {
+  width: 80%;
+
+  border-bottom: solid black 2px;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .text {

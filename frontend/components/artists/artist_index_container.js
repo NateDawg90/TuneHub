@@ -3,12 +3,13 @@ import ArtistIndex from './artist_index';
 import { requestAllArtists, requestSampleArtists } from '../../actions/artist_actions';
 import {selectAllArtists} from '../../reducers/selectors';
 
+
 const mapStateToProps = state => ({
   artists: selectAllArtists(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchArtists: () => dispatch(requestSampleArtists()),
+  fetchSampleArtists: () => dispatch(requestSampleArtists()),
   requestAllArtists: () => dispatch(requestAllArtists())
 });
 

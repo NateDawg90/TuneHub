@@ -17,7 +17,6 @@ Track.create(name: "XO", artist_id: a.id, track_url: "https://p.scdn.co/mp3-prev
 
 
 @list.each do |artist|
-  # debugger;
   begin
     artists = RSpotify::Artist.search(artist)
     artist = artists.first

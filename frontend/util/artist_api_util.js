@@ -20,9 +20,10 @@ export const createArtist = (user) => {
   });
 };
 
-export const fetchRandomArtist = () => {
+export const fetchSampleArtists = () => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${id}`
+    url: 'api/users',
+    data: {sample: true}
   });
 };

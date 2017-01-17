@@ -10,10 +10,6 @@ import ArtistActions from '../actions/artist_actions';
 
 const Root = ({ store }) => {
 
-  // const _fetchArtist = nextState => {
-  //   debugger;
-  //   store.dispatch(ArtistActions.requestArtist(nextState.params.artistId));
-  // };
 
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;

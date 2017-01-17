@@ -12,8 +12,6 @@ const ArtistsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_ARTISTS:
       return merge({}, action.artists);
-    case RECEIVE_SINGLE_ARTIST:
-      return merge({}, action.artist);
     default:
       return state;
   }

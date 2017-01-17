@@ -1,0 +1,88 @@
+.artist-info-section {
+  position: relative;
+  left: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-pause {
+  font-size: 20px;
+  color: grey;
+}
+
+.fa-play {
+  font-size: 20px;
+  color: grey;
+  // left: 2px;
+}
+
+.fa-volume-up {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.fa-play:hover, .fa-pause:hover {
+  color: white;
+}
+
+// .link-to-artist:hover {
+//   color: grey;
+// }
+
+
+.link-to-artist:hover {
+  color: grey;
+}
+
+.link-to-artist {
+  padding-top: 26px;
+}
+
+.input-slider {
+  position: relative;
+  top: 2px;
+  margin: 0px;
+}
+
+.play-button {
+  height: 100%;
+  width: 70px;
+  background: black;
+  border-width: 0px;
+}
+
+.play-button:focus {
+  outline: none;
+}
+
+.small-artist-image {
+  width: auto;
+  height: 100%;
+  border: none;
+}
+
+.taskbar {
+  background: black;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px;
+}
+
+.track-controls {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+  float: left;
+}
+
+.track-slider {
+  display: flex;
+  align-items: center;
+}

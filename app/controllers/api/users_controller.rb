@@ -19,7 +19,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:sample]
+      @users = User.all.shuffle.take(10)
+    else
+      @users = User.all
+    end
   end
 
   def show

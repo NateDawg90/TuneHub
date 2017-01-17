@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import SongIndex from './song_index';
+import TrackIndex from './track_index';
 
 const mapStateToProps = ({session, artistDetail}) => {
   return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SongIndex);
+)(TrackIndex);

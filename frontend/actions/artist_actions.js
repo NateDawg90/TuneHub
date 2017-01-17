@@ -33,14 +33,8 @@ export const requestAllArtists = () => (dispatch) => {
 };
 
 export const requestSampleArtists = () => (dispatch) => {
-	let artists = [];
-
-	for (let i = 0; i < 10; i++) {
-		let id = Math.floor(Math.random() * 1000);
-		artists.push(requestSingleArtist(id));
-	}
-
-	return artists;
+	return APIUtil.fetchSampleArtists()
+		.then(artists => dispatch(receiveAllArtists(artists)));
 };
 
 export const requestSingleArtist = (id) => (dispatch) => {
