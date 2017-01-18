@@ -6,15 +6,9 @@ export const createFollow = (follow) => {
   });
 };
 
-export const removeFollow = () => {
+export const removeFollow = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/follows'
+    url: `api/follows${id}`
   });
 };
-
-$.ajax({
-  method: 'POST',
-  url: 'api/follows',
-  data: {follow: {artist_id: 200, fan_id: 962} }
-});

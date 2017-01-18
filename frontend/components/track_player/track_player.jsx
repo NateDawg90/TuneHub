@@ -29,19 +29,19 @@ export default class App extends React.Component {
   }
 
   playPause(){
-    this.setState({ playing: !this.state.playing })
+    this.setState({ playing: !this.state.playing });
   }
 
   stop(){
-    this.setState({ url: null, playing: false })
+    this.setState({ url: null, playing: false });
   }
 
   setVolume(e){
-    this.setState({ volume: parseFloat(e.target.value) })
+    this.setState({ volume: parseFloat(e.target.value) });
   }
 
   onSeekMouseDown(e) {
-    this.setState({ seeking: true })
+    this.setState({ seeking: true });
   }
 
   onSeekChange(e){
@@ -110,10 +110,12 @@ export default class App extends React.Component {
 
         <section className="artist-info-section">
           <img src={this.props.trackPlayerArtist.image_url}
-               className="small-artist-image"></img>
+            className="small-artist-image"></img>
           <Link to={`/artists/${this.props.trackPlayerArtist.id}`}
-                className={"link-to-artist"}>
-                {this.props.trackPlayerArtist.name}
+            className="link-to-artist">
+            <div className='artist-thumbnail-name'>{this.props.trackPlayerArtist.name}</div>
+            <div className='artist-song-separator'>{this.props.trackPlaying ? " - " : ""}</div>
+            <div className='track-thumbnail-name'>{this.props.trackPlayer.name}</div>
           </Link>
         </section>
       </div>

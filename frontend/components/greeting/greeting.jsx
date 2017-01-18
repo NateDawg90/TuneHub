@@ -13,9 +13,9 @@ const sessionLinks = () => (
     </div>
 
     <nav className="login-signup">
-      <Link to="/login" activeClassName="current">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup" activeClassName="current">Sign up!</Link>
+      <Link className='login-button' to="/login" activeClassName="current">Login</Link>
+      <div className='or'>or</div>
+      <Link className='login-button' to="/signup" activeClassName="current">Sign up!</Link>
     </nav>
 
   </div>

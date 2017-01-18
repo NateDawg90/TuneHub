@@ -6,13 +6,12 @@
   color: black;
   background: white;
   // margin: 10px;
-  padding: 5px;
 }
 
 
 .left-nav {
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .splash-logo {
@@ -32,7 +31,7 @@
   align-items: center;
   color: black;
   font-weight: bold;
-  margin: 15px;
+  margin: 10px;
 }
 
 .tunehub {
@@ -40,20 +39,29 @@
 }
 
 .slogan {
-  color: blue;
+  // color: blue;
   font-size: 14px;
-  font-family: comic;
+  font-weight: bold;
+  // font-family: comic;
   margin-left: 20px;
+  color: #582081;
+  // align-self: flex-end;
 }
 
 .login-signup > a {
+  padding: 10px;
+  margin: 15px;
+  color: white;
+  border-radius: 15px;
+  background: #582081;
   text-decoration: none;
   font-weight: bold;
 }
 
 .login-signup {
   display: flex;
-  margin: 10px;
+  align-items: center;
+  // margin: 10px;
 }
 
 .header-group {

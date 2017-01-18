@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 import ArtistDetail from './artist_detail';
-import { requestSingleArtist } from '../../actions/artist_actions';
+import { requestSingleArtist, createFollow, deleteFollow } from '../../actions/artist_actions';
 import { addTrackToQueue } from '../../actions/track_player_actions';
 
 //your current user is your current artist.
 const mapStateToProps = ({session, artistDetail}, ownProps) => {
   return {
+    currentUser: session.currentUser,
     artist: artistDetail,
     artistId: ownProps.params.artistId
   };
@@ -13,7 +14,9 @@ const mapStateToProps = ({session, artistDetail}, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   requestArtist: (id) => dispatch(requestSingleArtist(id)),
-  addTrackToQueue: (track, artist) => dispatch(addTrackToQueue(track, artist))
+  addTrackToQueue: (track, artist) => dispatch(addTrackToQueue(track, artist)),
+  follow: (follow) => dispatch(createFollow(follow)),
+  unFollow: () => dispatch(deleteFollow())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistDetail);

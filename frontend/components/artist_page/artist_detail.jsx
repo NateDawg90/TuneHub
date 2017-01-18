@@ -4,10 +4,12 @@ import TrackIndex from '../tracks/track_index';
 class ArtistDetail extends React.Component {
   constructor(props){
     super(props);
-    this.state = {edit: false,
+    this.state = {
                   images: [],
-                  editTracks: false};
+                  follow: false
+                };
     this.activateEdit = this.activateEdit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   activateEdit(){
@@ -23,7 +25,6 @@ class ArtistDetail extends React.Component {
       <h1>{this.props.artist.name}</h1>
     );
   }
-
 
   cancel(){
     return (
@@ -44,7 +45,41 @@ class ArtistDetail extends React.Component {
   }
 
   componentWillMount(){
-    this.setState({edit: false});
+    // // debugger;
+    // let followed_artists = this.props.currentUser.followed_artists;
+    //
+    // if (followed_artists.includes(this.props.artist)) {
+    //   this.setState({follow: true});
+    // } else {
+    //   this.setState({follow: false});
+    // }
+  }
+
+  isfollowing() {
+    // let currentUser = this.props.currentUser;
+    // if (currentUser.followed_artists.includes())
+  }
+
+  handleClick() {
+    debugger;
+    let follow = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
+    if (this.state.follow) {
+      this.props.unfollow(follow);
+    } else {
+      this.props.follow(follow);
+    }
+  }
+
+  followButton() {
+    // debugger;
+    return (
+      <div className='follow-button'>
+        <button
+          onClick={this.handleClick}>
+          {this.state.follow ? "Unfollow" : "Follow"}
+        </button>
+      </div>
+    );
   }
 
   image(){
@@ -64,7 +99,10 @@ class ArtistDetail extends React.Component {
     return (
       <div className="artist-detail">
         <div className="artist-header">
-          {this.artistHeader()}
+          <div className='artist-name-container'>
+            {this.artistHeader()}
+            {this.followButton()}
+          </div>
           {this.image()}
         </div>
 

@@ -4,7 +4,32 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
+
+.artist-thumbnail-name {
+  font-weight: bold;
+}
+
+.link-to-artist {
+  color: grey;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.link-to-artist > * {
+  margin-left: 10px;
+  color: grey;
+  text-decoration: none;
+
+}
+
+.link-to-artist:hover * {
+  color: white;
+}
+
 
 .fa-pause {
   font-size: 20px;
@@ -31,13 +56,7 @@
 // }
 
 
-.link-to-artist:hover {
-  color: grey;
-}
 
-.link-to-artist {
-  padding-top: 26px;
-}
 
 .input-slider {
   position: relative;

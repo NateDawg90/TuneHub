@@ -19,8 +19,8 @@ const App = ({ children }) => (
 
     { children }
     <TrackPlayerContainer />
-    <Footer />
   </div>
 );
+// <Footer />
 
 export default App;

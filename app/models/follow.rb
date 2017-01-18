@@ -3,13 +3,8 @@ class Follow < ApplicationRecord
   validates_uniqueness_of :fan_id, scope: [:artist_id]
 
   has_one :followed_artist,
-    foreign_key: :artist_id,
+    primary_key: :artist_id,
+    foreign_key: :id,
     class_name: 'User'
-
-  has_one :follower,
-    foreign_key: :fan_id,
-    class_name: 'User'
-
-
 
 end

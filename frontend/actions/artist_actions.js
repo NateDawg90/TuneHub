@@ -5,6 +5,8 @@ export const RECEIVE_SINGLE_ARTIST = 'RECEIVE_SINGLE_ARTIST';
 export const CREATE_ARTIST         = 'CREATE_ARTIST';
 export const RECEIVE_NEW_ARTIST    = 'RECEIVE_NEW_ARTIST';
 export const RECEIVE_ARTIST_ERRORS = 'RECEIVE_ARTIST_ERRORS';
+export const RECEIVE_NEW_FOLLOW = 'RECEIVE_NEW_FOLLOW';
+
 
 export const receiveAllArtists = artists => ({
 	type: RECEIVE_ALL_ARTISTS,
@@ -24,6 +26,11 @@ export const receiveNewArtist = artist => ({
 export const receiveArtistErrors = errors => ({
 	type: RECEIVE_ARTIST_ERRORS,
 	errors
+});
+
+export const receiveNewFollow = follow => ({
+	type: RECEIVE_NEW_FOLLOW,
+	follow
 });
 
 // async
@@ -49,4 +56,14 @@ export const createArtist = artist => dispatch => (
 		dispatch(receiveNewArtist(a));
 		return artist;
 	}).fail(err => dispatch(receiveArtistErrors(err.responseJSON)))
+);
+
+export const createFollow = follow => dispatch => (
+	APIUtil.createFollow(follow)
+	.then(res => dispatch(receiveNewFollow(res)))
+);
+
+export const deleteFollow = (id) => dispatch => (
+	APIUtil.removeFollow(id)
+	.then(res => dispatch(receiveNewFollow(null)))
 );

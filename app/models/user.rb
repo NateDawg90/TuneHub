@@ -26,27 +26,16 @@ class User < ApplicationRecord
     foreign_key: :artist_id,
     class_name: 'Track'
 
-  has_many :follows,
-    foreign_key: :artist_id,
-    class_name: 'User'
-
   has_many :followed_artists,
-    through: :followers,
-    source: 'Follow'
+    through: :follows,
+    source: :followed_artist
+
+  has_many :follows,
+    foreign_key: :fan_id,
+    class_name: 'Follow'
 
   after_initialize :ensure_session_token
 
-  def set_default_colors
-    self.primary_color ||= "#ddd"
-    self.secondary_color ||= "#ffffff"
-    self.text_color ||= "#000000"
-  end
-
-  def set_band_name
-    if self.type === "artist"
-      self.name ||= "Band Name"
-    end
-  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
