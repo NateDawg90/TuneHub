@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const ArtistIndexItem = ({ artist, router }) => (
-  <li className="artist-index-item">
-    <Link to={`/artists/${artist.id}`}>
-      <span>{artist.id}</span>
-      <img
-        className='detail-image'
-        src={artist.image_url}
-        alt={artist.name}>
-      </img>
-      <span>{artist.name}</span>
-    </Link>
-  </li>
+const ArtistIndexItem = ({ artist, router }) => {
+  // debugger;
+  return (
+    <div className="artist-index-item">
+      <Link to={`/artists/${artist.id}`}>
 
-);
+        <div className="detail-image">
+          <img src={artist.image_url}></img>
+        </div>
+        <span>{artist.name}</span>
+      </Link>
+    </div>
+
+  );
+};
 
 export default ArtistIndexItem;
 // <li className="sample-artist">

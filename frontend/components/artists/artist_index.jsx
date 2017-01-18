@@ -20,23 +20,23 @@ class ArtistsIndex extends Component {
     return (
       <section className="artist-index">
         <div className="video-container">
-          <h3>Discover Your favorite Music!</h3>
+          <h3>Discover Your favorite Tunes!</h3>
           <Link
             className='splash-login'
             to="/signup"
             activeClassName="current">Sign Up!
           </Link>
 
-          <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484632582/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_prxrdq.mp4"
+          <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484679861/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.mp4"
             autoPlay
             muted
             loop
             className="video"/>
         </div>
         <div className="artist-display">
-          <h1>Check Out Artist Profiles!</h1>
+          <h1>Find Artists to Follow</h1>
           <ul className='artist-profiles-container'>
-            {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} />)}
+            {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} image={artist.image_url} />)}
           </ul>
 
         </div>

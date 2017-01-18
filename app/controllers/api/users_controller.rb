@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:sample]
-      @users = User.all.shuffle.take(10)
+      @users = User.where(user_type: "artist").shuffle.take(15)
     else
       @users = User.all
     end
