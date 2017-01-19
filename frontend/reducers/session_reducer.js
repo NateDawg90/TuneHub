@@ -12,6 +12,7 @@ const _nullUser = Object.freeze({
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
+  // debugger;
 
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
@@ -21,8 +22,10 @@ const SessionReducer = (state = _nullUser, action) => {
       });
 
     case RECEIVE_NEW_FOLLOW:
-      debugger;
-      return merge({}, _nullUser, action.follow);
+      // debugger;
+      return merge({}, _nullUser, {
+        currentUser: action.follow
+      });
 
     case RECEIVE_ERRORS:
     const errors = action.errors;

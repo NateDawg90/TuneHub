@@ -34,6 +34,14 @@ class User < ApplicationRecord
     foreign_key: :fan_id,
     class_name: 'Follow'
 
+  has_many :artist_follows,
+    foreign_key: :artist_id,
+    class_name: 'Follow'
+    
+  has_many :followers,
+    through: :artist_follows,
+    source: :follower
+
   after_initialize :ensure_session_token
 
 

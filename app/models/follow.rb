@@ -7,4 +7,9 @@ class Follow < ApplicationRecord
     foreign_key: :id,
     class_name: 'User'
 
+  has_one :follower,
+    primary_key: :fan_id,
+    foreign_key: :id,
+    class_name: 'User'
+
 end

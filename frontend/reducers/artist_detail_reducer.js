@@ -9,11 +9,12 @@ import {
 const _nullArtist = Object.freeze({
   id: "",
   username: "",
-  user_type: "",
+  user_type: "artist",
   name: "",
   location: "",
   description: "",
-  tracks: []
+  tracks: [],
+  followers: []
 });
 
 const ArtistDetailReducer = (state = _nullArtist, action) => {

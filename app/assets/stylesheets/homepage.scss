@@ -35,10 +35,19 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 1000px;
-  // background: #582081;
-
-
 }
+
+.sample-link {
+  text-decoration: none;
+  border: none;
+}
+
+.sample-name {
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+}
+
 
 .splash-login {
   padding: 18px;

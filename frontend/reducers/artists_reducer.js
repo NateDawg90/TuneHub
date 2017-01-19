@@ -5,6 +5,7 @@ import {
   RECEIVE_NEW_ARTIST,
   RECEIVE_SINGLE_ARTIST
 } from '../actions/artist_actions';
+import { UPDATE_SEARCH } from '../actions/search_actions';
 
 
 const ArtistsReducer = (state = {}, action) => {

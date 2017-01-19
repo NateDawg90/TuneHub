@@ -6,7 +6,7 @@ import Footer from './footer/footer';
 
 const App = ({ children }) => (
   <div className="root">
-    <header className='header'>
+    <header>
       <link
         href="https://fonts.googleapis.com/css?family=Bungee+Shade"
         rel="stylesheet" />
@@ -14,8 +14,8 @@ const App = ({ children }) => (
         href="https://fonts.googleapis.com/css?family=Rubik"
         rel="stylesheet" />
 
-      <GreetingContainer/>
     </header>
+    <GreetingContainer className='greeting'/>
 
     { children }
     <TrackPlayerContainer />

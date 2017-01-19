@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SearchContainer from '../search/search_container';
 
 const sessionLinks = () => (
   <div className='header'>
@@ -11,7 +12,7 @@ const sessionLinks = () => (
       <span className='slogan'>Connecting people with tunes and their creators
       </span>
     </div>
-
+    <SearchContainer className='search-container'/>
     <nav className="login-signup">
       <Link className='login-button' to="/login" activeClassName="current">Login</Link>
       <div className='or'>or</div>
@@ -31,7 +32,7 @@ const personalGreeting = (currentUser, logout) => (
       <span className='slogan'>Connecting people with tunes and their creators
       </span>
     </div>
-
+    <SearchContainer className='search-container' />
     <hgroup className="header-group">
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
       <button className="header-button" onClick={logout}>Log Out</button>

@@ -5,12 +5,12 @@ const ArtistIndexItem = ({ artist, router }) => {
   // debugger;
   return (
     <div className="artist-index-item">
-      <Link to={`/artists/${artist.id}`}>
+      <Link to={`/artists/${artist.id}`} className='sample-link'>
 
         <div className="detail-image">
           <img src={artist.image_url}></img>
         </div>
-        <span>{artist.name}</span>
+        <div className='sample-name'>{artist.name}</div>
       </Link>
     </div>
 

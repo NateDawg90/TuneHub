@@ -19,10 +19,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    # debugger
     if params[:sample]
       @users = User.where(user_type: "artist").shuffle.take(15)
-    else
-      @users = User.all
+    elsif params[:searchInput]
+      @users = User.where('LOWER(name) ~ LOWER(?)', params[:searchInput]).shuffle.take(15)
     end
   end
 

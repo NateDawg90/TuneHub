@@ -10,7 +10,6 @@ class ArtistDetail extends React.Component {
                 };
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.isFollowing = this.isFollowing.bind(this);
   }
 
   activateEdit(){
@@ -42,55 +41,45 @@ class ArtistDetail extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
-
     this.props.requestArtist(this.props.artistId);
-    this.isFollowing();
   }
 
   componentWillMount(){
-    // debugger;
+    // // debugger;
+    // let followed_artists = this.props.currentUser.followed_artists;
+    //
+    // if (followed_artists.includes(this.props.artist)) {
+    //   this.setState({follow: true});
+    // } else {
+    //   this.setState({follow: false});
+    // }
   }
 
-  isFollowing() {
-    debugger;
-    let followers = this.props.artist.followers;
-    if (followers && followers.includes(this.props.currentUser)) {
-      this.setState({follow: true});
-    } else {
-      this.setState({follow: false});
-    }
+  isfollowing() {
     // let currentUser = this.props.currentUser;
     // if (currentUser.followed_artists.includes())
   }
 
   handleClick() {
-    // debugger;
-    let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
-    if (this.state.follow === true) {
-      this.props.unFollow(data);
-      this.setState({follow: false});
+    debugger;
+    let follow = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
+    if (this.state.follow) {
+      this.props.unfollow(follow);
     } else {
-      this.props.follow(data);
-      this.setState({follow: true});
+      this.props.follow(follow);
     }
   }
 
   followButton() {
-    debugger;
-    if (this.props.currentUser) {
-      return (
-        <div className='follow-button'>
-
-          <button
-            onClick={this.handleClick}>
-            {this.state.follow ? "Unfollow" : "Follow"}
-          </button>
-          <div className='followers'>{this.props.artist.followers.length}</div>
-        </div>
-      );
-
-    }
+    // debugger;
+    return (
+      <div className='follow-button'>
+        <button
+          onClick={this.handleClick}>
+          {this.state.follow ? "Unfollow" : "Follow"}
+        </button>
+      </div>
+    );
   }
 
   image(){
@@ -112,10 +101,10 @@ class ArtistDetail extends React.Component {
         <div className="artist-header">
           <div className='artist-name-container'>
             {this.artistHeader()}
+            {this.followButton()}
           </div>
           {this.image()}
         </div>
-        {this.followButton()}
 
         <div className='artist-body'>
           <div className="left-hand-container">
@@ -138,7 +127,6 @@ class ArtistDetail extends React.Component {
     );
   }
 }
-// {this.props.currentUser ? this.followButton() : ""}
 
 // {this.props.children}
 

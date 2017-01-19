@@ -22,6 +22,11 @@
    width: 100%;
  }
 
+ html {
+   display: flex;
+   flex-direction: column;
+ }
+
 .root {
    font-family: 'Rubik';
    font-size: 14px;
