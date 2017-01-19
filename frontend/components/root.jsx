@@ -7,6 +7,8 @@ import ArtistIndexContainer from './artists/artist_index_container';
 import ArtistDetailContainer from './artist_page/artist_detail_container';
 import FanDetailContainer from './fan_page/fan_detail_container';
 import ArtistActions from '../actions/artist_actions';
+import * as SessionActions from '../actions/session_actions';
+
 
 const Root = ({ store }) => {
 
@@ -26,9 +28,10 @@ const Root = ({ store }) => {
   };
 
   const _requestUserInfo = () => {
+    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      // ArtistActions.requestSingleArtist(currentUser.id);
+      SessionActions.requestUser(currentUser.id);
     }
   };
 

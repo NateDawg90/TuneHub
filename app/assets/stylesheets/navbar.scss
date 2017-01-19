@@ -11,8 +11,10 @@
   width: 100%;
   color: black;
   background: white;
-  // margin: 10px;
   position: fixed;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px indigo;
   z-index: 10;
 }
 

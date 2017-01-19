@@ -5,7 +5,8 @@ import {selectAllArtists} from '../../reducers/selectors';
 
 
 const mapStateToProps = state => ({
-  artists: selectAllArtists(state)
+  artists: selectAllArtists(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -15,17 +15,23 @@ class ArtistsIndex extends Component {
     }
   }
 
+  signUpButton() {
+    return (
+      <Link
+        className='splash-login'
+        to="/signup"
+        activeClassName="current">Sign Up!
+      </Link>
+    );
+  }
+
   render() {
-    const { artists, children } = this.props;
+    const { artists, children, currentUser } = this.props;
     return (
       <section className="artist-index">
         <div className="video-container">
           <h3>Discover Your favorite Tunes!</h3>
-          <Link
-            className='splash-login'
-            to="/signup"
-            activeClassName="current">Sign Up!
-          </Link>
+          {!currentUser ? this.signUpButton() : ""}
 
           <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484679861/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.mp4"
             autoPlay
@@ -42,6 +48,7 @@ class ArtistsIndex extends Component {
         </div>
 
         {children}
+        
       </section>
     );
   }

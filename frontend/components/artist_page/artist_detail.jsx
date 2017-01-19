@@ -53,7 +53,7 @@ class ArtistDetail extends React.Component {
   }
 
   isFollowing() {
-    debugger;
+    // debugger;
     let followers = this.props.artist.followers;
     if (followers && followers.includes(this.props.currentUser)) {
       this.setState({follow: true});
@@ -77,7 +77,7 @@ class ArtistDetail extends React.Component {
   }
 
   followButton() {
-    debugger;
+    // debugger;
     if (this.props.currentUser) {
       return (
         <div className='follow-button'>

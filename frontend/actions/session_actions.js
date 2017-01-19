@@ -31,3 +31,9 @@ export const logout = () => dispatch => (
   SessionAPI.logout()
     .then(user => dispatch(receiveCurrentUser(null)))
 );
+
+export const requestUser = id => dispatch => (
+  SessionAPI.fetchUser(id)
+    .then(currentUser => dispatch(receiveCurrentUser(currentUser))),
+    error => dispatch(receiveErrors(error.responseJSON))
+);
