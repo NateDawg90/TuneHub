@@ -15,11 +15,14 @@ export const receiveErrors = errors => ({
 });
 
 // async
-export const signup = user => dispatch => (
+export const signup = user => dispatch => {
   SessionAPI.signup(user)
-    .then(currentUser => dispatch(receiveCurrentUser(currentUser)),
-    error => dispatch(receiveErrors(error.responseJSON)))
-);
+    .then(currentUser => {
+      // debugger;
+      dispatch(receiveCurrentUser(currentUser));
+    })
+    .fail(error => dispatch(receiveErrors(error.responseJSON)));
+};
 
 export const login = user => dispatch => (
   SessionAPI.login(user)

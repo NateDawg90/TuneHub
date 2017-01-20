@@ -4,13 +4,14 @@ import TrackIndex from '../tracks/track_index';
 class ArtistDetail extends React.Component {
   constructor(props){
     super(props);
+    let currentFollow = (props.artist.followers.includes(props.currentUser) ? true : false);
     this.state = {
                   images: [],
-                  follow: (props.artist.followers.includes(props.currentUser) ? true : false)
+                  follow: currentFollow
                 };
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.isFollowing = this.isFollowing.bind(this);
+    // this.isFollowing = this.isFollowing.bind(this);
   }
 
   activateEdit(){
@@ -31,18 +32,18 @@ class ArtistDetail extends React.Component {
     this.props.requestArtist(this.props.artistId);
   }
 
-  isFollowing() {
-    let followers = this.props.artist.followers;
-    // console.log(followers);
-    // console.log(this.props.currentUser);
-    if (followers[this.props.currentUser] !== undefined) {
-      this.setState({follow: true});
-      // debugger;
-    } else {
-      this.setState({follow: false});
-      // debugger;
-    }
-  }
+  // isFollowing() {
+  //   let followers = this.props.artist.followers;
+  //   // console.log(followers);
+  //   // console.log(this.props.currentUser);
+  //   if (followers[this.props.currentUser] !== undefined) {
+  //     this.setState({follow: true});
+  //     // debugger;
+  //   } else {
+  //     this.setState({follow: false});
+  //     // debugger;
+  //   }
+  // }
 
   handleClick(e) {
     e.preventDefault();
@@ -58,7 +59,7 @@ class ArtistDetail extends React.Component {
   }
 
   followButton() {
-    debugger;
+    // debugger;
     if (this.props.currentUser && this.props.artist.id !== "") {
       debugger;
       return (
