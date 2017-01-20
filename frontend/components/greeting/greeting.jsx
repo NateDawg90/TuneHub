@@ -34,6 +34,7 @@ const personalGreeting = (currentUser, logout) => (
     </div>
     <SearchContainer className='search-container' />
     <hgroup className="header-group">
+
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
@@ -41,6 +42,10 @@ const personalGreeting = (currentUser, logout) => (
   </div>
 );
 
+// <Link to={`/users/${currentUser.id}`} className='profile-link'>
+//
+//   <div className='sample-name'>{artist.name}</div>
+// </Link>
 const Greeting = ({ currentUser, logout }) => (
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
 );

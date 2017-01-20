@@ -6,7 +6,7 @@ class ArtistDetail extends React.Component {
     super(props);
     this.state = {
                   images: [],
-                  follow: false
+                  follow: (props.artist.followers.includes(props.currentUser) ? false : true)
                 };
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -27,37 +27,8 @@ class ArtistDetail extends React.Component {
     );
   }
 
-  cancel(){
-    return (
-        <button onClick={this.activateEdit}
-                className="finish-edit">Finish Editing</button>
-    );
-  }
-
-  cancelEditTracks(){
-    return (
-        <button onClick={this.editTracks.bind(this)}
-                className="edit-tracks-cancel">Cancel</button>
-    );
-  }
-
-  componentDidMount() {
-    // this.props.requestArtist(this.props.artistId);
-    if (this.props.artist.id !== "") {
-      this.isFollowing();
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-
-  }
-
   componentWillMount(){
     this.props.requestArtist(this.props.artistId);
-  }
-
-  componentDidUpdate() {
-
   }
 
   isFollowing() {
@@ -66,10 +37,10 @@ class ArtistDetail extends React.Component {
     // console.log(this.props.currentUser);
     if (followers[this.props.currentUser] !== undefined) {
       this.setState({follow: true});
-      debugger;
+      // debugger;
     } else {
       this.setState({follow: false});
-      debugger;
+      // debugger;
     }
   }
 
@@ -88,7 +59,7 @@ class ArtistDetail extends React.Component {
 
   followButton() {
     if (this.props.currentUser && this.props.artist.id !== "") {
-      // debugger;
+      debugger;
       return (
         <div className='follow-button'>
 

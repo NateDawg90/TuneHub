@@ -3,7 +3,7 @@ import FanDetail from './fan_detail';
 import { requestSingleArtist } from '../../actions/artist_actions';
 
 //your current user is your current artist.
-const mapStateToProps = ({session, fanDetail}) => ({
+const mapStateToProps = ({session}) => ({
     currentUser: session.currentUser,
     followedArtists: session.currentUser.followedArtists
 });
