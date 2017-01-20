@@ -12,7 +12,6 @@ const sessionLinks = () => (
       <span className='slogan'>Connecting people with tunes and their creators
       </span>
     </div>
-    <SearchContainer className='search-container'/>
     <nav className="login-signup">
       <Link className='login-button' to="/login" activeClassName="current">Login</Link>
       <div className='or'>or</div>
@@ -32,7 +31,6 @@ const personalGreeting = (currentUser, logout) => (
       <span className='slogan'>Connecting people with tunes and their creators
       </span>
     </div>
-    <SearchContainer className='search-container' />
     <hgroup className="header-group">
 
       <h2 className="hi">Hi, </h2>

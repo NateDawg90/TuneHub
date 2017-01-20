@@ -1,64 +1,50 @@
 # TuneHub
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[TuneHub.audio][chime] is a web application for users to stream music and follow artists. Inspired by Bandcamp, TuneHub allows users to browse artist pages, listen to their tracks, follow those artists, and discover other artists.
 
-[Trello link][trello]
+TuneHub is a personal project by Nathan Johnson.
 
-[heroku]: http://bctunehub.herokuapp.com/
-[trello]: https://trello.com/b/UsLIzPHC/tunehub
+![TuneHub home page: http://www.chime.audio][home page]
 
-## Minimum Viable Product
+## Features
 
-TuneHub is a web application inspired by Bandcamp built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
+- User accounts with secure authentication
+- Music streaming with controls and no interruption
+- Artist pages
+- Searching for artists
+- Artist follows allowing users to consolidate music
+- Artist Descriptions
+- Adding tracks to a temporary queue for playback
+- Image views for artists
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Artist Pages
-- [ ] Song player with locking playbar
-- [ ] Search function
-- [ ] Ability for artists to upload and fans to download songs
-- [ ] Ability for fans to review albums (BONUS)
-- [ ] Ability for fans to follow artists or other fans (BONUS)
-- [ ] Production README [sample](docs/production_readme.md)
+![demo_user's tracks: http://www.chime.audio/demo_user/tracks][tracks]
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+## Project Design
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+TuneHub was designed and built in a week and a half weeks.
 
-## Implementation Timeline
+A [proposal][proposal] was drafted to help provide an implementation timeline during the development process.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+A [database schema][schema] was prepared alongside the design proposal.
 
-**Objective:** Functioning rails project with front-end Authentication
+## Technology
 
-### Phase 2: Artist Pages (2 days)
+TuneHub is a single-page application built on Rails and React.js, with many dependencies in both the backend and the frontend.
 
-**Objective:** Visualization of Artist info.
+- [Backend technology][backend]
+- [Frontend technology][frontend]
+- [File storage][file storage] via Amazon Cloudinary
 
-### Phase 3: Song Player (.5 day)
+## Future Implementations
 
-**Objective:** Plays songs.
+The features that will be added are listed in the [future implementations][future] outline.
 
-### Phase 4: Search Function & top nave bar (1 days)
-
-**Objective:** Search bar is locked to the top of the screen on all screens except sign-in. Results can come from Artists, albums, songs, and fans.
-
-### Phase 5: Follows  (2 days)
-
-**Objective:** Fans follow artists or other fans
-
-### Bonus Features (TBD)
-- [ ] Upload / Download Songs
-- [ ] Purchase Songs
+[chime]: https://chime.audio
+[home page]: ./docs/images/main_page.png "TuneHub home page"
+[artist]: ./docs/images/artist_page.png "An Artist's page"
+[proposal]: ./docs/proposal.md
+[schema]: ./docs/schema.md
+[backend]: ./docs/backend.md
+[frontend]: ./docs/frontend.md
+[file storage]: ./docs/file_storage.md
+[future]: ./docs/future.md

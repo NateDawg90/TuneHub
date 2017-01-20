@@ -22,18 +22,27 @@
   // background: #582081;
 }
 
-.artist-display h1 {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 40px;
-  padding-top: 40px;
-}
 
 .artist-profiles-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 1000px;
+}
+
+.artist-search {
+  // text-align: center;
+  margin: 20px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.artist-search h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 40px;
 }
 
 .sample-image {
@@ -60,6 +69,11 @@
   border: none;
   font-weight: bold;
 }
+
+.search-container {
+  height: 30px;
+}
+
 
 .splash-login {
   padding: 18px;

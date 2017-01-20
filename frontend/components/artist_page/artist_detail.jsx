@@ -7,8 +7,9 @@ class ArtistDetail extends React.Component {
     let currentFollow = (props.artist.followers.includes(props.currentUser) ? true : false);
     this.state = {
                   images: [],
-                  follow: currentFollow
+                  follow: this.isFollowing()
                 };
+                debugger;
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     // this.isFollowing = this.isFollowing.bind(this);
@@ -32,29 +33,26 @@ class ArtistDetail extends React.Component {
     this.props.requestArtist(this.props.artistId);
   }
 
-  // isFollowing() {
-  //   let followers = this.props.artist.followers;
-  //   // console.log(followers);
-  //   // console.log(this.props.currentUser);
-  //   if (followers[this.props.currentUser] !== undefined) {
-  //     this.setState({follow: true});
-  //     // debugger;
-  //   } else {
-  //     this.setState({follow: false});
-  //     // debugger;
-  //   }
-  // }
+  isFollowing() {
+    let followers = this.props.artist.followers;
+    for (var i = 0; i < followers.length; i++) {
+      if (followers[i].id === this.props.currentUser.id) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   handleClick(e) {
     e.preventDefault();
     let { currentUser, artistId } = this.props;
     let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
     if (this.state.follow === true) {
-      this.props.unFollow(this.props.artistId).then(res => this.props.requestArtist(this.props.artistId));
-      this.setState({follow: false});
+      this.props.unFollow(this.props.artistId).then(this.setState({follow: false}));
+
     } else {
-      this.props.follow(data).then(res => this.props.requestArtist(this.props.artistId));
-      this.setState({follow: true});
+      this.props.follow(data).then(this.setState({follow: true}));
+
     }
   }
 

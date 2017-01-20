@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ArtistIndexItem from './artist_index_item';
 import {Link} from 'react-router';
+import SearchContainer from '../search/search_container';
+
 
 class ArtistsIndex extends Component {
   componentDidMount() {
@@ -39,8 +41,11 @@ class ArtistsIndex extends Component {
             loop
             className="video"/>
         </div>
-        <div className="artist-display">
+        <div className='artist-search'>
           <h1>Find Artists to Follow</h1>
+          <SearchContainer className='search-container'/>
+        </div>
+        <div className="artist-display">
           <ul className='artist-profiles-container'>
             {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} image={artist.image_url} />)}
           </ul>
