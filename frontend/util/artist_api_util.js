@@ -37,9 +37,10 @@ export const createFollow = (follow) => {
   });
 };
 
-export const removeFollow = () => {
+export const removeFollow = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/follows'
+    url: `api/follows/`,
+    data: {follow: id}
   });
 };

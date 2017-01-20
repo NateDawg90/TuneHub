@@ -48,14 +48,10 @@ class ArtistsIndex extends Component {
         </div>
 
         {children}
-        
+
       </section>
     );
   }
 }
 
 export default ArtistsIndex;
-
-// <video className='welcome-video' autoPlay muted loop>
-//   <source src='video_url' type='video/mp4' />
-// </video>

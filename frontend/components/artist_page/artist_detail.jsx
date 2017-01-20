@@ -42,51 +42,61 @@ class ArtistDetail extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
+    // this.props.requestArtist(this.props.artistId);
+    if (this.props.artist.id !== "") {
+      this.isFollowing();
+    }
+  }
 
-    this.props.requestArtist(this.props.artistId);
-    this.isFollowing();
+  componentWillReceiveProps(newProps) {
+
   }
 
   componentWillMount(){
-    // debugger;
+    this.props.requestArtist(this.props.artistId);
+  }
+
+  componentDidUpdate() {
+
   }
 
   isFollowing() {
-    // debugger;
     let followers = this.props.artist.followers;
-    if (followers && followers.includes(this.props.currentUser)) {
+    // console.log(followers);
+    // console.log(this.props.currentUser);
+    if (followers[this.props.currentUser] !== undefined) {
       this.setState({follow: true});
+      debugger;
     } else {
       this.setState({follow: false});
+      debugger;
     }
-    // let currentUser = this.props.currentUser;
-    // if (currentUser.followed_artists.includes())
   }
 
-  handleClick() {
-    // debugger;
+  handleClick(e) {
+    e.preventDefault();
+    let { currentUser, artistId } = this.props;
     let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
     if (this.state.follow === true) {
-      this.props.unFollow(data);
+      this.props.unFollow(this.props.artistId).then(res => this.props.requestArtist(this.props.artistId));
       this.setState({follow: false});
     } else {
-      this.props.follow(data);
+      this.props.follow(data).then(res => this.props.requestArtist(this.props.artistId));
       this.setState({follow: true});
     }
   }
 
   followButton() {
-    // debugger;
-    if (this.props.currentUser) {
+    if (this.props.currentUser && this.props.artist.id !== "") {
+      // debugger;
       return (
         <div className='follow-button'>
 
           <button
             onClick={this.handleClick}>
-            {this.state.follow ? "Unfollow" : "Follow"}
+            {this.state.follow === true ? "Unfollow" : "Follow"}
           </button>
-          <div className='followers'>{this.props.artist.followers.length}</div>
+
         </div>
       );
 
@@ -94,6 +104,7 @@ class ArtistDetail extends React.Component {
   }
 
   image(){
+    // debugger;
     return (
     <div className="detail-image">
       <img src={this.props.artist.image_url}></img>
@@ -112,10 +123,18 @@ class ArtistDetail extends React.Component {
         <div className="artist-header">
           <div className='artist-name-container'>
             {this.artistHeader()}
+            <div className='follows'>
+              <div
+                className='followers'>{this.props.artist.followers.length}
+                {this.props.artist.followers.length === 1 ? " Follower" : " Followers"}
+              </div>
+
+              {this.followButton()}
+
+            </div>
           </div>
           {this.image()}
         </div>
-        {this.followButton()}
 
         <div className='artist-body'>
           <div className="left-hand-container">

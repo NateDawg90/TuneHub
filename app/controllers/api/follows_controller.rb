@@ -12,7 +12,7 @@ class Api::FollowsController < ApplicationController
   def destroy
     @follow = Follow.find_by(fan_id: current_user.id,
                           artist_id: params[:follow])
-                        
+                      
     @follow.destroy
     @user = current_user
     render 'api/users/show'

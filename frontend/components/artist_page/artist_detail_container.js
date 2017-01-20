@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   requestArtist: (id) => dispatch(requestSingleArtist(id)),
   addTrackToQueue: (track, artist) => dispatch(addTrackToQueue(track, artist)),
   follow: (follow) => dispatch(createFollow(follow)),
-  unFollow: (follow) => dispatch(deleteFollow(follow.artist_id))
+  unFollow: (artistId) => dispatch(deleteFollow(artistId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistDetail);
