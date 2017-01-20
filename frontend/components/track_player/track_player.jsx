@@ -92,32 +92,36 @@ export default class App extends React.Component {
           volume={this.state.volume}
           onProgress={this.onProgress}
         />
+        <div className='bottom-centered-content'>
+          <section className="track-controls">
+            <button
+              className="play-button"
+              onClick={this.playPause}>{this.state.playing ? this.pause() : this.play()}
+            </button>
 
-        <section className="track-controls group">
-          <button
-            className="play-button"
-            onClick={this.playPause}>{this.state.playing ? this.pause() : this.play()}
-          </button>
-
-          <label className="track-slider">
-            {this.volume()}
-            <input type="range" min={0} max={1} step='any'
+            <label className="track-slider">
+              {this.volume()}
+              <input type="range" min={0} max={1} step='any'
                 value={this.state.volume}
-               onChange={this.setVolume}
-               className="input-slider"/>
-          </label>
-        </section>
+                onChange={this.setVolume}
+                className="input-slider"/>
+            </label>
+          </section>
 
-        <section className="artist-info-section">
-          <img src={this.props.trackPlayerArtist.image_url}
-            className="small-artist-image"></img>
-          <Link to={`/artists/${this.props.trackPlayerArtist.id}`}
-            className="link-to-artist">
-            <div className='artist-thumbnail-name'>{this.props.trackPlayerArtist.name}</div>
-            <div className='artist-song-separator'>{this.props.trackPlaying ? " - " : ""}</div>
-            <div className='track-thumbnail-name'>{this.props.trackPlayer.name}</div>
-          </Link>
-        </section>
+          <section className="artist-info-section">
+            <img src={this.props.trackPlayerArtist.image_url}
+              className="small-artist-image"></img>
+            <Link to={`/artists/${this.props.trackPlayerArtist.id}`}
+              className="link-to-artist">
+              <div className='artist-thumbnail-name'>{this.props.trackPlayerArtist.name}</div>
+              <div className='artist-song-separator'>{this.props.trackPlaying ? " - " : ""}</div>
+              <div className='track-thumbnail-name'>{this.props.trackPlayer.name}</div>
+            </Link>
+          </section>
+        </div>
+
+
+        <div className='small-logo'>TH</div>
       </div>
     );
   }

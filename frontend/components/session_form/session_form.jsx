@@ -44,13 +44,13 @@ class SessionForm extends React.Component {
 	}
 
 	renderErrors() {
-		debugger;
+		// debugger;
 		return(
-			<ul className='errors-list'>
+			<ul>
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
+					<div key={`error-${i}`}>
 						{error}
-					</li>
+					</div>
 				))}
 			</ul>
 		);
@@ -65,11 +65,11 @@ class SessionForm extends React.Component {
 				</h2>
 				<div className='top-divider'></div>
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<br/>
+					<div className='errors-list'>
+						{this.renderErrors()}
 
-					{this.renderErrors()}
+					</div>
 					<div className="login-form">
-						<br/>
 
 						<div className='input'>
 							<label className='input-label'> Username
@@ -90,8 +90,9 @@ class SessionForm extends React.Component {
 						</div>
 						<br/>
 
-						<Alerts errors={ this.props.errors }/>
 						<input className='login-submit' type="submit" value="Submit" />
+						<div className='alt-link'>Or {this.navLink()}</div>
+
 					</div>
 				</form>
 			</div>
@@ -99,5 +100,6 @@ class SessionForm extends React.Component {
 	}
 
 }
+// <Alerts errors={ this.props.errors }/>
 
 export default withRouter(SessionForm);

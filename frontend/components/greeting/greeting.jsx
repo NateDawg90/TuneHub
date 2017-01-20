@@ -35,17 +35,16 @@ const personalGreeting = (currentUser, logout) => (
     <SearchContainer className='search-container' />
     <hgroup className="header-group">
 
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
+      <h2 className="hi">Hi, </h2>
+      <Link to={`/users/${currentUser.id}`} className='profile-link'>
+        <div className='username'>{currentUser.username}</div>
+      </Link>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
 
   </div>
 );
 
-// <Link to={`/users/${currentUser.id}`} className='profile-link'>
-//
-//   <div className='sample-name'>{artist.name}</div>
-// </Link>
 const Greeting = ({ currentUser, logout }) => (
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
 );

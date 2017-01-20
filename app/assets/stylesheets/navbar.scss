@@ -30,6 +30,7 @@
   background-image: image-url("tuning-fork.jpg");
   background-size: 100%;
   margin-right: 5px;
+  margin-left: 5px;
 }
 
 .header-link {
@@ -43,18 +44,21 @@
   margin: 7px;
 }
 
+.hi {
+  margin: 8px;
+}
+
 .tunehub {
   margin-left: 5px;
 }
 
 .slogan {
-  // color: blue;
   font-size: 14px;
   font-weight: bold;
-  // font-family: comic;
+  align-self: flex-end;
   margin-left: 20px;
+  margin-bottom: 9px;
   color: #582081;
-  // align-self: flex-end;
 }
 
 .login-signup > a {

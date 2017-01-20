@@ -6,16 +6,20 @@ const ArtistIndexItem = ({ artist, router }) => {
   return (
     <div className="artist-index-item">
       <Link to={`/artists/${artist.id}`} className='sample-link'>
-
-        <div className="detail-image">
-          <img src={artist.image_url}></img>
-        </div>
+        <img className='sample-image' src={artist.image_url}></img>
         <div className='sample-name'>{artist.name}</div>
       </Link>
     </div>
 
   );
 };
+// <div className={"play-button-image"}
+//   onClick={this.playSong(this.props.artist.song, this.props.artist)}>
+//   <span className="fa-stack fa-lg">
+//     <i className="fa fa-circle fa-stack-2x"></i>
+//     <i className="fa fa-play fa-stack-1x"></i>
+//   </span>
+// </div>
 
 export default ArtistIndexItem;
 // <li className="sample-artist">

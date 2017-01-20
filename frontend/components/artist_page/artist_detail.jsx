@@ -6,7 +6,7 @@ class ArtistDetail extends React.Component {
     super(props);
     this.state = {
                   images: [],
-                  follow: (props.artist.followers.includes(props.currentUser) ? false : true)
+                  follow: (props.artist.followers.includes(props.currentUser) ? true : false)
                 };
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -58,6 +58,7 @@ class ArtistDetail extends React.Component {
   }
 
   followButton() {
+    debugger;
     if (this.props.currentUser && this.props.artist.id !== "") {
       debugger;
       return (
