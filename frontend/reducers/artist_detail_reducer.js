@@ -3,8 +3,7 @@ import { merge } from 'lodash';
 import {
   RECEIVE_ALL_ARTISTS,
   RECEIVE_NEW_ARTIST,
-  RECEIVE_SINGLE_ARTIST,
-  REMOVE_FOLLOW
+  RECEIVE_SINGLE_ARTIST
 } from '../actions/artist_actions';
 
 const _nullArtist = Object.freeze({
@@ -27,8 +26,7 @@ const ArtistDetailReducer = (state = _nullArtist, action) => {
       return merge({}, {
         [action.artist.id]: action.artist
       });
-    case REMOVE_FOLLOW:
-      return merge({}, action.follow);
+
     default:
       return state;
   }

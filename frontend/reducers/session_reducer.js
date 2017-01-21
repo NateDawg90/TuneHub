@@ -3,7 +3,6 @@ import {
   RECEIVE_CURRENT_USER,
   RECEIVE_ERRORS
 } from '../actions/session_actions';
-import { RECEIVE_NEW_FOLLOW } from '../actions/artist_actions';
 
 const _nullUser = Object.freeze({
   currentUser: null,
@@ -22,14 +21,8 @@ const SessionReducer = (state = _nullUser, action) => {
         currentUser
       });
 
-    case RECEIVE_NEW_FOLLOW:
-      // debugger;
-      return merge({}, _nullUser, {
-        currentUser: action.follow
-      });
-
     case RECEIVE_ERRORS:
-    const errors = action.errors;
+      const errors = action.errors;
       return merge({}, _nullUser, {
         errors
       });

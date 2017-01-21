@@ -4,12 +4,12 @@ import TrackIndex from '../tracks/track_index';
 class ArtistDetail extends React.Component {
   constructor(props){
     super(props);
-    let currentFollow = (props.artist.followers.includes(props.currentUser) ? true : false);
     this.state = {
                   images: [],
-                  follow: this.isFollowing()
+                  follow: this.isFollowing(),
+                  done: true
                 };
-                debugger;
+                // debugger;
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     // this.isFollowing = this.isFollowing.bind(this);
@@ -47,19 +47,19 @@ class ArtistDetail extends React.Component {
     e.preventDefault();
     let { currentUser, artistId } = this.props;
     let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
-    if (this.state.follow === true) {
-      this.props.unFollow(this.props.artistId).then(this.setState({follow: false}));
-
+    debugger;
+    if (this.props.follow) {
+      this.props.newFollow(data).then(this.setState({follow: true}));
     } else {
-      this.props.follow(data).then(this.setState({follow: true}));
+      this.props.unFollow(this.props.artistId).then(this.setState({follow: false}));
 
     }
   }
 
   followButton() {
     // debugger;
-    if (this.props.currentUser && this.props.artist.id !== "") {
-      debugger;
+    // if (this.props.currentUser && this.props.artist.id !== "") {
+      // debugger;
       return (
         <div className='follow-button'>
 
@@ -71,7 +71,7 @@ class ArtistDetail extends React.Component {
         </div>
       );
 
-    }
+    // }
   }
 
   image(){

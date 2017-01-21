@@ -5,11 +5,13 @@ import ArtistDetailReducer from './artist_detail_reducer';
 import TrackPlayerReducer from './track_player_reducer';
 import FanDetailReducer from './fan_detail_reducer';
 import SearchReducer from './search_reducer';
+import FollowReducer from './follow_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
   artists: ArtistsReducer,
   artistDetail: ArtistDetailReducer,
+  follow: FollowReducer,
   fanDetail: FanDetailReducer,
   search: SearchReducer,
   trackPlayer: TrackPlayerReducer
