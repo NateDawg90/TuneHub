@@ -19,8 +19,7 @@ export const createFollow = follow => dispatch => (
 	.then(res => dispatch(receiveNewFollow(res)))
 );
 
-export const deleteFollow = (id) => dispatch => {
-	return APIUtil.removeFollow(id)
-	.then(res => dispatch(removeFollow(res)));
-
-};
+export const deleteFollow = (id) => dispatch => (
+  APIUtil.removeFollow(id)
+	.then(res => dispatch(removeFollow(res)))
+);

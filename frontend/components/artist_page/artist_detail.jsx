@@ -13,6 +13,8 @@ class ArtistDetail extends React.Component {
     this.activateEdit = this.activateEdit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     // this.isFollowing = this.isFollowing.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnFollow = this.handleUnFollow.bind(this);
   }
 
   activateEdit(){
@@ -29,8 +31,16 @@ class ArtistDetail extends React.Component {
     );
   }
 
-  componentWillMount(){
+  componentDidMount() {
     this.props.requestArtist(this.props.artistId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (this.props.artist !== nextProps.artist) {
+      this.props.requestArtist(nextProps.artistId);
+      // debugger;
+    }
   }
 
   isFollowing() {
@@ -47,7 +57,7 @@ class ArtistDetail extends React.Component {
     e.preventDefault();
     let { currentUser, artistId } = this.props;
     let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
-    debugger;
+    // debugger;
     if (this.props.follow) {
       this.props.newFollow(data).then(this.setState({follow: true}));
     } else {
@@ -56,23 +66,57 @@ class ArtistDetail extends React.Component {
     }
   }
 
+  handleFollow(e) {
+    let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
+    this.props.newFollow(data);
+  }
+
+  handleUnFollow(e) {
+    // debugger;
+    this.props.unFollow(this.props.artistId);
+  }
+
+
   followButton() {
     // debugger;
-    // if (this.props.currentUser && this.props.artist.id !== "") {
+    if (this.props.currentUser && this.props.artist.id !== "") {
       // debugger;
-      return (
-        <div className='follow-button'>
+      if (this.getFollowState() === "follow") {
+        return (
+          <div className='follow-button'>
+            <button
+              onClick={this.handleFollow}>
+              Follow
+            </button>
 
-          <button
-            onClick={this.handleClick}>
-            {this.state.follow === true ? "Unfollow" : "Follow"}
-          </button>
+          </div>
+        );
+      } else {
+        // debugger;
+        return (
+          <div className='follow-button'>
+            <button
+              onClick={this.handleUnFollow}>
+              Unfollow
+            </button>
 
-        </div>
-      );
+          </div>
+        );
+      }
 
-    // }
+    }
   }
+
+  getFollowState() {
+    if (this.props.artist.followers.find( (follower) => {
+      return follower.id === this.props.currentUser.id;
+    })) {
+      return "unfollow";
+    } else {
+      return "follow";
+    }
+  }
+
 
   image(){
     // debugger;

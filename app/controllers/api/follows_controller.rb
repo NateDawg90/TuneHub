@@ -5,10 +5,11 @@ class Api::FollowsController < ApplicationController
     if @follow.save!
       # @user = current_user
       # render "api/users/show"
+      # debugger
       render json: {
         id: @follow.id,
-        fan: current_user.id,
-        artist_id: params[:artist_id]
+        fan_id: current_user.id,
+        artist_id: params[:follow][:artist_id].to_i
       }, status: 200
     else
       render json: @follow.errors.full_messages, status: 422
