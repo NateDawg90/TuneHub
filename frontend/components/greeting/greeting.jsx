@@ -34,7 +34,7 @@ const personalGreeting = (currentUser, logout) => (
     <hgroup className="header-group">
 
       <h2 className="hi">Hi, </h2>
-      <Link to={`/users/${currentUser.id}`} className='profile-link'>
+      <Link to={`/fans/${currentUser.id}`} className='profile-link'>
         <div className='username'>{currentUser.username}</div>
       </Link>
       <button className="header-button" onClick={logout}>Log Out</button>

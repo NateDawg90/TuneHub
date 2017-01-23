@@ -4,25 +4,8 @@ import TrackIndex from '../tracks/track_index';
 class ArtistDetail extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-                  images: [],
-                  follow: this.isFollowing(),
-                  done: true
-                };
-                // debugger;
-    this.activateEdit = this.activateEdit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    // this.isFollowing = this.isFollowing.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnFollow = this.handleUnFollow.bind(this);
-  }
-
-  activateEdit(){
-    if(this.state.edit === false){
-      this.setState({edit: true});
-    } else {
-      this.setState({edit: false});
-    }
   }
 
   artistHeader(){
@@ -36,33 +19,8 @@ class ArtistDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
-    if (this.props.artist !== nextProps.artist) {
+    if (this.props.follow !== nextProps.follow) {
       this.props.requestArtist(nextProps.artistId);
-      // debugger;
-    }
-  }
-
-  isFollowing() {
-    let followers = this.props.artist.followers;
-    for (var i = 0; i < followers.length; i++) {
-      if (followers[i].id === this.props.currentUser.id) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    let { currentUser, artistId } = this.props;
-    let data = {fan_id: this.props.currentUser.id, artist_id: this.props.artistId};
-    // debugger;
-    if (this.props.follow) {
-      this.props.newFollow(data).then(this.setState({follow: true}));
-    } else {
-      this.props.unFollow(this.props.artistId).then(this.setState({follow: false}));
-
     }
   }
 
@@ -75,7 +33,6 @@ class ArtistDetail extends React.Component {
     // debugger;
     this.props.unFollow(this.props.artistId);
   }
-
 
   followButton() {
     // debugger;
@@ -119,7 +76,6 @@ class ArtistDetail extends React.Component {
 
 
   image(){
-    // debugger;
     return (
     <div className="detail-image">
       <img src={this.props.artist.image_url}></img>

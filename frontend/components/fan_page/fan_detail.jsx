@@ -1,62 +1,50 @@
 import React from 'react';
-import TrackIndex from '../tracks/track_index';
+import ArtistIndexItem from './../artists/artist_index_item';
 
 class FanDetail extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-                  images: [],
-                  follow: false
-                };
-    this.activateEdit = this.activateEdit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
 
-  userHeader(){
-    return (
-      <h1>{this.props.user.name}</h1>
-    );
   }
 
   componentDidMount() {
-    this.props.requestFan(this.props.userId);
+    
   }
 
-
+  fanHeader() {
+    return (
+      <h1>{this.props.currentUser.username}</h1>
+    );
+  }
 
   render(){
+    const followedArtists = this.props.currentUser.followed_artists;
+    // debugger;
     return (
-      <div className="user-detail">
-        <div className="user-header">
-          <div className='user-name-container'>
-            {this.userHeader()}
-            {this.followButton()}
+      <div className="fan-detail">
+        <div className="fan-header">
+          <div className='fan-name-container'>
+            {this.fanHeader()}
           </div>
-          {this.image()}
+          <div
+            className='followed-artists'>{followedArtists.length}
+            {followedArtists.length === 1 ? " Followed Artist" : " Followed Artists"}
+          </div>
         </div>
 
-        <div className='user-body'>
-          <div className="left-hand-container">
-            <header className="tracks-header">
-              Tracks
-            </header>
-            <ul>
-              <TrackIndex props={this.props} />
-            </ul>
-          </div>
-
-          <div className="right-hand-container">
-            <span className='description-header'>Description</span>
-
-            <div className='description'>{this.props.user.description}</div>
-          </div>
-
-        </div>
+        <ul className='followed-artists-container'>
+          {followedArtists.map(artist => {
+            return (
+              <div key={artist.id} className='followed-artist-link'>
+                <ArtistIndexItem  artist={artist} image={artist.image_url} />
+                <div className='artist-divider'></div>
+              </div>
+            );
+          })}
+        </ul>
       </div>
     );
   }
 }
-
-// {this.props.children}
 
 export default FanDetail;

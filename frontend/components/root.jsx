@@ -43,7 +43,7 @@ const Root = ({ store }) => {
           <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="artists/:artistId" component={ArtistDetailContainer} />
-          <Route path="fans/:userId" component={FanDetailContainer} />
+          <Route path="fans/:userId" component={FanDetailContainer} className='fan-page'/>
 
         </Route>
       </Router>
