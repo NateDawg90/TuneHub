@@ -31,6 +31,7 @@ const Root = ({ store }) => {
     // debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
+      debugger;
       SessionActions.requestUser(currentUser.id);
     }
   };
@@ -43,7 +44,7 @@ const Root = ({ store }) => {
           <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="artists/:artistId" component={ArtistDetailContainer} />
-          <Route path="fans/:userId" component={FanDetailContainer} className='fan-page'/>
+          <Route path="fans/:userId" component={FanDetailContainer}  onEnter={_requestUserInfo}/>
 
         </Route>
       </Router>

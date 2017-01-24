@@ -39,7 +39,7 @@ TuneHub is a single-page application built on Rails and React.js, with many depe
 
 The features that will be added are listed in the [future implementations][future] outline.
 
-[tunehub]: https://tunehub.online
+[tunehub]: tunehub.online
 [home page]: ./docs/images/main_page.png "TuneHub home page"
 [artist]: ./docs/images/artist_page.png "An Artist's page"
 [proposal]: ./docs/proposal.md
