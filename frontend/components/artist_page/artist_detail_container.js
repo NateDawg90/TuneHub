@@ -6,7 +6,6 @@ import { addTrackToQueue } from '../../actions/track_player_actions';
 
 //your current user is your current artist.
 const mapStateToProps = ({session, artistDetail, follow}, ownProps) => {
-  // debugger;
   return {
     currentUser: session.currentUser,
     artist: artistDetail,

@@ -11,7 +11,6 @@ class Search extends React.Component {
 
   update() {
     return e => {
-      // debugger
       this.setState({ ['searchParams']: e.target.value });
       this.props.updateSearch(e.target.value);
 

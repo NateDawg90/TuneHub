@@ -28,10 +28,8 @@ const Root = ({ store }) => {
   };
 
   const _requestUserInfo = () => {
-    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      debugger;
       SessionActions.requestUser(currentUser.id);
     }
   };

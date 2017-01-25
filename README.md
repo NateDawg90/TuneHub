@@ -14,14 +14,13 @@ TuneHub is a personal project by Nathan Johnson.
 - Searching for artists
 - Artist follows allowing users to consolidate music
 - Artist Descriptions
-- Adding tracks to a temporary queue for playback
 - Image views for artists
 
 ![demo_user's tracks: http://www.tunehub.online/artist/][artist]
 
 ## Project Design
 
-TuneHub was designed and built in a week and a half weeks.
+TuneHub was designed and built in a week and a half.
 
 A [proposal][proposal] was drafted to help provide an implementation timeline during the development process.
 

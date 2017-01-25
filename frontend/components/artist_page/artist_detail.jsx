@@ -30,14 +30,11 @@ class ArtistDetail extends React.Component {
   }
 
   handleUnFollow(e) {
-    // debugger;
     this.props.unFollow(this.props.artistId);
   }
 
   followButton() {
-    // debugger;
     if (this.props.currentUser && this.props.artist.id !== "") {
-      // debugger;
       if (this.getFollowState() === "follow") {
         return (
           <div className='follow-button'>
@@ -49,7 +46,6 @@ class ArtistDetail extends React.Component {
           </div>
         );
       } else {
-        // debugger;
         return (
           <div className='follow-button'>
             <button
@@ -128,8 +124,5 @@ class ArtistDetail extends React.Component {
     );
   }
 }
-// {this.props.currentUser ? this.followButton() : ""}
-
-// {this.props.children}
 
 export default ArtistDetail;

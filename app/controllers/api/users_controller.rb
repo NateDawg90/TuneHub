@@ -19,7 +19,6 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    # debugger
     if params[:sample]
       @users = User.where(user_type: "artist").shuffle.take(15)
     elsif params[:searchInput]

@@ -10,10 +10,19 @@ class SessionForm extends React.Component {
 			password: ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.renderErrors = this.renderErrors.bind(this);
+
 	}
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
+	}
+
+	componentDidMount() {
+		// debugger;
+		if (this.props.errors !== []) {
+			this.props.clearErrors();
+		}
 	}
 
 
@@ -36,15 +45,16 @@ class SessionForm extends React.Component {
 	}
 
 	navLink() {
+		// this.props.clearErrors();
+		// debugger;
 		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
+			return <Link to="/signup" onClick={this.props.clearErrors} >sign up instead</Link>;
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return <Link to="/login" onClick={this.props.clearErrors} >log in instead</Link>;
 		}
 	}
 
 	renderErrors() {
-		// debugger;
 		return(
 			<ul>
 				{this.props.errors.map((error, i) => (

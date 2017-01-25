@@ -8,7 +8,7 @@ class FanDetail extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   fanHeader() {
@@ -19,7 +19,6 @@ class FanDetail extends React.Component {
 
   render(){
     const followedArtists = this.props.currentUser.followed_artists;
-    // debugger;
     return (
       <div className="fan-detail">
         <div className="fan-header">

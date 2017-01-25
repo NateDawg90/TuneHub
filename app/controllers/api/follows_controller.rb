@@ -1,11 +1,7 @@
 class Api::FollowsController < ApplicationController
   def create
     @follow = Follow.new(follow_params)
-    # debugger
     if @follow.save!
-      # @user = current_user
-      # render "api/users/show"
-      # debugger
       render json: {
         id: @follow.id,
         fan_id: current_user.id,

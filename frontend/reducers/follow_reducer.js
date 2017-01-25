@@ -16,7 +16,6 @@ const FollowReducer = (state = _nullFollow, action) => {
     case REMOVE_FOLLOW:
       return merge({}, action.follow);
     case RECEIVE_NEW_FOLLOW:
-      // debugger;
       return Object.assign({}, _nullFollow, {
         follow: action.follow
       });
