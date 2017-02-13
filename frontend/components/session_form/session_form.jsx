@@ -18,7 +18,6 @@ class SessionForm extends React.Component {
 	}
 
 	componentDidMount() {
-		// debugger;
 		if (this.props.errors !== []) {
 			this.props.clearErrors();
 		}
@@ -44,8 +43,6 @@ class SessionForm extends React.Component {
 	}
 
 	navLink() {
-		// this.props.clearErrors();
-		// debugger;
 		if (this.props.formType === "login") {
 			return <Link to="/signup" onClick={this.props.clearErrors} >sign up instead</Link>;
 		} else {
@@ -54,7 +51,6 @@ class SessionForm extends React.Component {
 	}
 
 	renderErrors() {
-		// debugger
 		return(
 			<ul>
 				{this.props.errors.map((error, i) => (
@@ -110,6 +106,5 @@ class SessionForm extends React.Component {
 	}
 
 }
-// <Alerts errors={ this.props.errors }/>
 
 export default withRouter(SessionForm);

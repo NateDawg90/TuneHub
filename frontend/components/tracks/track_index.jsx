@@ -5,7 +5,6 @@ import {withRouter} from 'react-router';
 class TrackIndex extends React.Component {
   constructor(props){
     super(props);
-    // debugger;
     this.state = {};
   }
 

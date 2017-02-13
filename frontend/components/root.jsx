@@ -14,7 +14,6 @@ const Root = ({ store }) => {
 
 
   const _ensureLoggedIn = (nextState, replace) => {
-    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('login');
@@ -22,7 +21,6 @@ const Root = ({ store }) => {
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
@@ -32,7 +30,6 @@ const Root = ({ store }) => {
 
 
   const _requestUserInfo = () => {
-    debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       SessionActions.requestUser(currentUser.id);

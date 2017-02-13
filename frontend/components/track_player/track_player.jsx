@@ -11,7 +11,6 @@ class TrackPlayer extends React.Component {
       playing: false,
       volume: 0.1
     };
-    // debugger;
     this.playPause = this.playPause.bind(this);
     this.stop = this.stop.bind(this);
     this.setVolume = this.setVolume.bind(this);
@@ -19,31 +18,11 @@ class TrackPlayer extends React.Component {
   }
 
 
-  // componentWillUpdate() {
-  //   // debugger;
-  //   if (this.props.trackPlaying && !this.state.playing){
-  //    this.setState({playing: true});
-  //   } else if (!this.props.trackPlaying && this.state.playing){
-  //    this.setState({playing: false});
-  //   }
-  //
-  // }
-
-  // shouldComponentUpdate() {
-  //   if (this.state.playing === this.props.trackPlaying) {
-  //     return false;
-  //   }
-  //   return true;
-  //
-  // }
-
   componentWillReceiveProps(nextProps) {
-    // debugger;
     this.setState({playing: nextProps.trackPlaying});
   }
 
   playPause() {
-    // debugger;
     if (this.state.playing === true) {
       this.props.pauseTrack();
     } else {
@@ -79,7 +58,6 @@ class TrackPlayer extends React.Component {
   }
 
   render(){
-    // debugger;
     return (
       <div className="taskbar">
         <ReactPlayer url={this.props.trackPlayer.track_url}

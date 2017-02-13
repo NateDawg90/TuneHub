@@ -29,7 +29,7 @@ class ArtistsIndex extends Component {
   }
 
   loginDemo() {
-    // debugger;
+    debugger;
     let user = { username: 'demo', password: 'password123' };
     this.props.login({user})
       .fail(err => console.log(err));

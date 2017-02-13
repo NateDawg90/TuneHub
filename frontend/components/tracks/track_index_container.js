@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import TrackIndex from './track_index';
 
 const mapStateToProps = ({session, artistDetail, trackPlayer}) => {
-  // debugger;
   return {
     currentUser: session.currentUser,
     tracks: artistDetail.tracks,
