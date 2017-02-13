@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import TrackPlayer from './track_player';
+import {pauseTrack, playTrack} from '../../actions/track_player_actions';
 
 const mapStateToProps = ({trackPlayer})=>({
   trackPlayer: trackPlayer.tracks[0],
@@ -9,7 +10,8 @@ const mapStateToProps = ({trackPlayer})=>({
 
 
 const mapDispatchToProps = (dispatch)=>({
-
+  pauseTrack: () => dispatch(pauseTrack()),
+  playTrack: () => dispatch(playTrack())
 });
 
 

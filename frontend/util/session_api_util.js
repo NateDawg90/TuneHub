@@ -14,7 +14,6 @@ export const login = user => (
   })
 );
 
-
 export const logout = () => (
   $.ajax({
     method: "DELETE",

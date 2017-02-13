@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import ArtistIndexItem from './artist_index_item';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 import SearchContainer from '../search/search_container';
 
 
 class ArtistsIndex extends Component {
   componentDidMount() {
     this.props.fetchSampleArtists();
+
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   signup(){
@@ -17,14 +19,20 @@ class ArtistsIndex extends Component {
     }
   }
 
-  signUpButton() {
+  demoButton() {
     return (
-      <Link
-        className='splash-login'
-        to="/signup"
-        activeClassName="current">Sign Up!
-      </Link>
+      <button
+        className='demo-login'
+        onClick={this.loginDemo}>Demo!
+      </button>
     );
+  }
+
+  loginDemo() {
+    // debugger;
+    let user = { username: 'demo', password: 'password123' };
+    this.props.login({user})
+      .fail(err => console.log(err));
   }
 
   render() {
@@ -33,7 +41,7 @@ class ArtistsIndex extends Component {
       <section className="artist-index">
         <div className="video-container">
           <h3>Discover Your favorite Tunes!</h3>
-          {!currentUser ? this.signUpButton() : ""}
+          {!currentUser ? this.demoButton() : ""}
 
           <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484679861/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.mp4"
             autoPlay

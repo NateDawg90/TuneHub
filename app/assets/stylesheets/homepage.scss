@@ -68,6 +68,7 @@
   text-decoration: none;
   border: none;
   font-weight: bold;
+  width: 270px;
 }
 
 .search-container {
@@ -75,7 +76,7 @@
 }
 
 
-.splash-login {
+.demo-login {
   padding: 18px;
   background: #582081;
   color: white;
@@ -88,9 +89,10 @@
   left: 44%;
   z-index: 1;
   border-radius: 25px;
+  border: none;
 }
 
-.splash-login:hover {
+.demo-login:hover {
   background: rgba(0,0,0,0.5);
 }
 

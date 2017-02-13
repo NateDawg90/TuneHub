@@ -14,34 +14,41 @@ const Root = ({ store }) => {
 
 
   const _ensureLoggedIn = (nextState, replace) => {
+    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
-      replace('/login');
+      replace('login');
     }
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
+    // debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
     }
   };
 
+
+
   const _requestUserInfo = () => {
+    debugger;
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       SessionActions.requestUser(currentUser.id);
     }
   };
 
+
+
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={App} className='app' onEnter={_requestUserInfo}>
+        <Route path="/" component={App} className='app'>
           <IndexRoute component={ArtistIndexContainer} />
           <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="artists/:artistId" component={ArtistDetailContainer} />
+          <Route path="artists/:artistId" component={ArtistDetailContainer} onEnter={_ensureLoggedIn}/>
           <Route path="fans/:userId" component={FanDetailContainer}  onEnter={_requestUserInfo}/>
 
         </Route>

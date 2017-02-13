@@ -1,75 +1,75 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import {Link} from 'react-router';
+import {withRouter} from 'react-router';
 
 
-export default class App extends React.Component {
+class TrackPlayer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-    playing: true,
-    volume: 0.1,
-    played: 0,
-    loaded: 0,
+      playing: false,
+      volume: 0.1
     };
+    // debugger;
     this.playPause = this.playPause.bind(this);
     this.stop = this.stop.bind(this);
     this.setVolume = this.setVolume.bind(this);
-    this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
-    this.onSeekChange = this.onSeekChange.bind(this);
-    this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
-    this.onProgress = this.onProgress.bind(this);
+    this.playPauseIcon = this.playPauseIcon.bind(this);
   }
 
-//incoming props playing is true, then setstate to be true.
-  componentWillReceiveProps(){
-    if (this.props.track_playing){
-     this.setState({playing: true});
+
+  // componentWillUpdate() {
+  //   // debugger;
+  //   if (this.props.trackPlaying && !this.state.playing){
+  //    this.setState({playing: true});
+  //   } else if (!this.props.trackPlaying && this.state.playing){
+  //    this.setState({playing: false});
+  //   }
+  //
+  // }
+
+  // shouldComponentUpdate() {
+  //   if (this.state.playing === this.props.trackPlaying) {
+  //     return false;
+  //   }
+  //   return true;
+  //
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    // debugger;
+    this.setState({playing: nextProps.trackPlaying});
+  }
+
+  playPause() {
+    // debugger;
+    if (this.state.playing === true) {
+      this.props.pauseTrack();
+    } else {
+      this.props.playTrack();
     }
-  }
-
-  playPause(){
     this.setState({ playing: !this.state.playing });
   }
 
-  stop(){
-    this.setState({ url: null, playing: false });
-  }
-
-  setVolume(e){
-    this.setState({ volume: parseFloat(e.target.value) });
-  }
-
-  onSeekMouseDown(e) {
-    this.setState({ seeking: true });
-  }
-
-  onSeekChange(e){
-    this.setState({ played: parseFloat(e.target.value) });
-  }
-
-  onSeekMouseUp(e) {
-    this.setState({ seeking: false });
-    this.player.seekTo(parseFloat(e.target.value));
-  }
-
-  onProgress(nextState) {
-    // We only want to update time slider if we are not currently seeking
-    if (!this.state.seeking) {
-      this.setState(nextState);
+  playPauseIcon() {
+    if (this.state.playing) {
+      return(
+        <i className="fa fa-pause"></i>
+      );
+    } else {
+      return(
+        <i className="fa fa-play" ></i>
+      );
     }
   }
 
-  pause(){
-    return(
-      <i className="fa fa-pause"></i>
-    );
+  stop() {
+    this.setState({ url: null, playing: false });
   }
 
-  play(){
-    return(
-      <i className="fa fa-play" ></i>
-    );
+  setVolume(e) {
+    this.setState({ volume: parseFloat(e.target.value) });
   }
 
   volume(){
@@ -78,8 +78,8 @@ export default class App extends React.Component {
     );
   }
 
-
   render(){
+    // debugger;
     return (
       <div className="taskbar">
         <ReactPlayer url={this.props.trackPlayer.track_url}
@@ -96,7 +96,7 @@ export default class App extends React.Component {
           <section className="track-controls">
             <button
               className="play-button"
-              onClick={this.playPause}>{this.state.playing ? this.pause() : this.play()}
+              onClick={this.playPause}>{this.playPauseIcon()}
             </button>
 
             <label className="track-slider">
@@ -126,3 +126,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default withRouter(TrackPlayer);

@@ -8,13 +8,22 @@ TuneHub is a personal project by Nathan Johnson.
 
 ## Features
 
-- User accounts with secure authentication
-- Music streaming with controls and no interruption
-- Artist pages
-- Searching for artists
-- Artist follows allowing users to consolidate music
-- Artist Descriptions
-- Image views for artists
+### User accounts with secure authentication
+Users can quickly sign up and be assured that their password is encrypted (hashed through BCrypt). Prospective users can demo the site using the a guest user profile with pre-seeded artists.
+[TuneHub home page: http://www.tunehub.online][home page]
+
+### Music streaming with controls and no interruption
+Users can stream music in real time and control volume through a handy play bar locked to the bottom of the screen.
+
+### Artist pages
+Each artist has its own page for viewing a sample album, cover, followers, and genre.
+
+### Searching for artists
+A search bar on the main page allows for quick lookup of your favorite artists.
+
+### Artist follows allowing users to consolidate music
+Fans can follow artists of their choice, consolidating them in a group on the fan's user page.
+
 
 ![demo_user's tracks: http://www.tunehub.online/artist/][artist]
 

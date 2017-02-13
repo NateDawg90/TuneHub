@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackIndex from '../tracks/track_index';
+import TrackIndexContainer from '../tracks/track_index_container';
 
 class ArtistDetail extends React.Component {
   constructor(props){
@@ -10,7 +11,7 @@ class ArtistDetail extends React.Component {
 
   artistHeader(){
     return (
-      <h1>{this.props.artist.name}</h1>
+      <h1 className='artist-name'>{this.props.artist.name}</h1>
     );
   }
 
@@ -37,23 +38,24 @@ class ArtistDetail extends React.Component {
     if (this.props.currentUser && this.props.artist.id !== "") {
       if (this.getFollowState() === "follow") {
         return (
-          <div className='follow-button'>
+
             <button
+              className='follow-button'
               onClick={this.handleFollow}>
               Follow
             </button>
 
-          </div>
+
         );
       } else {
         return (
-          <div className='follow-button'>
+
             <button
+              className='follow-button'
               onClick={this.handleUnFollow}>
               Unfollow
             </button>
 
-          </div>
         );
       }
 
@@ -100,7 +102,10 @@ class ArtistDetail extends React.Component {
 
             </div>
           </div>
-          {this.image()}
+          <div className='detail-image-container'>
+            {this.image()}
+            <div className='album-title'></div>
+          </div>
         </div>
 
         <div className='artist-body'>
@@ -109,7 +114,7 @@ class ArtistDetail extends React.Component {
               Tracks
             </header>
             <ul>
-              <TrackIndex props={this.props} />
+              <TrackIndexContainer props={this.props} />
             </ul>
           </div>
 

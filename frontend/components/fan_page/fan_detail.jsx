@@ -4,21 +4,17 @@ import ArtistIndexItem from './../artists/artist_index_item';
 class FanDetail extends React.Component {
   constructor(props){
     super(props);
-
-  }
-
-  componentDidMount() {
-
+    this.props.requestUser(this.props.currentUser.id);
   }
 
   fanHeader() {
     return (
-      <h1>{this.props.currentUser.username}</h1>
+      <h1>{this.props.currentUser ? this.props.currentUser.username : "null"}</h1>
     );
   }
 
   render(){
-    const followedArtists = this.props.currentUser.followed_artists;
+    const followedArtists = (this.props.currentUser ? this.props.currentUser.followed_artists : []);
     return (
       <div className="fan-detail">
         <div className="fan-header">
@@ -27,7 +23,7 @@ class FanDetail extends React.Component {
           </div>
           <div
             className='followed-artists'>{followedArtists.length}
-            {followedArtists.length === 1 ? " Followed Artist" : " Followed Artists"}
+            {followedArtists.length === 1 ? "Followed Artist" : " Followed Artists"}
           </div>
         </div>
 
