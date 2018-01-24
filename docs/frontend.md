@@ -1,6 +1,6 @@
 # Frontend
 
-As a single-page application, Chime utilizes the React.js framework and follows the Redux architecture to deliver the frontend.
+As a single-page application, Tunehub utilizes the React.js framework and follows the Redux architecture to deliver the frontend.
 
 ## npm
 
