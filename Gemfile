@@ -34,6 +34,8 @@ gem 'faker'
 
 gem 'rspotify'
 
+gem 'rest-client'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do

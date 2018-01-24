@@ -43,7 +43,7 @@ class ArtistsIndex extends Component {
           <h3>Discover Your favorite Tunes!</h3>
           {!currentUser ? this.demoButton() : ""}
 
-          <video src="http://res.cloudinary.com/njohnson90/video/upload/v1484679861/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.mp4"
+          <video src="http://res.cloudinary.com/njohnson90/video/upload/ac_none,vc_auto,fl_lossy,q_60,w_1280/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.webm"
             autoPlay
             muted
             loop
