@@ -42,12 +42,7 @@ class ArtistsIndex extends Component {
         <div className="video-container">
           <h3>Discover Your favorite Tunes!</h3>
           {!currentUser ? this.demoButton() : ""}
-
-          <video src="http://res.cloudinary.com/njohnson90/video/upload/ac_none,vc_auto,fl_lossy,q_60,w_1280/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.webm"
-            autoPlay
-            muted
-            loop
-            className="video"/>
+          <video className="video" src="http://res.cloudinary.com/njohnson90/video/upload/ac_none,vc_auto,fl_lossy,q_60,w_1280/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.webm" autoPlay muted loop/>
         </div>
         <div className='artist-search'>
           <h1>Find Artists to Follow</h1>
