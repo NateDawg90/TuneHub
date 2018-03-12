@@ -41,7 +41,7 @@ class Greeting extends React.Component {
         <div className="left-nav">
           <Link to="/" className="header-link">
             <div className='splash-logo'></div>
-            <h1 className='tunehub'>TuneHub</h1>
+            <h2 className='tunehub'>TuneHub</h2>
           </Link>
           <span className='slogan'>Connecting people with tunes and their creators
           </span>
