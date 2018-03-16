@@ -12,7 +12,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchSampleArtists: () => dispatch(requestSampleArtists()),
-  requestAllArtists: () => dispatch(requestAllArtists()),
   login: (user) => dispatch(login(user))
 });
 

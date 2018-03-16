@@ -64,41 +64,34 @@ class SessionForm extends React.Component {
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<h2 className='heading'>
-
+			<div className="w-70 flex flex-column justify-center mt6 pa3">
+				<h2 className='mv2 f3 self-center'>
 					{ this.props.formType === "login" ? "Login" : "Sign Up"}
 				</h2>
-				<div className='top-divider'></div>
-				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<div className='errors-list'>
+				<div className='mv4 ba bl-0 bt-0 br-0 bw2 b--dotted'></div>
+				<form onSubmit={this.handleSubmit}>
+					<div className='red mb3 b tc'>
 						{this.renderErrors()}
-
 					</div>
-					<div className="login-form">
-
-						<div className='input'>
-							<label className='input-label'> Username
+					<div className="flex flex-column items-center justify-between">
+						<div className='flex items-center'>
+							<label className='f4 ma2 db'> Username
 							</label>
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
-								className="input-form" />
+								className="f4" />
 						</div>
-						<br/>
-						<div className='input'>
-							<label className='input-label'> Password
+						<div className='flex items-center'>
+							<label className='f4 ma2 db'> Password
 							</label>
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
-								className="input-form" />
+								className="f4" />
 						</div>
-						<br/>
-
-						<input className='login-submit' type="submit" value="Submit" />
-						<div className='alt-link'>Or {this.navLink()}</div>
-
+						<input className='bn br-pill bg-purple mt4 mb3 white pv3 ph5 no-underline dib f4 shadow-hover outline-0' type="submit" value="Submit" />
+						<div className='gray'>Or {this.navLink()}</div>
 					</div>
 				</form>
 			</div>

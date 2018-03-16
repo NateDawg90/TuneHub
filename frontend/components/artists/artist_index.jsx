@@ -11,25 +11,17 @@ class ArtistsIndex extends Component {
     this.loginDemo = this.loginDemo.bind(this);
   }
 
-  signup(){
-    if (this.props.loggedIn){
-      this.props.router.push(`/artists/${this.props.loggedIn.id}`);
-    } else {
-      this.props.router.push("/signup");
-    }
-  }
-
   demoButton() {
     return (
       <button
-        className='demo-login'
+        className='pa2 bg-purple white f2 b bn br3 shadow-hover outline-0'
         onClick={this.loginDemo}>Demo!
       </button>
+    
     );
   }
 
   loginDemo() {
-    debugger;
     let user = { username: 'demo', password: 'password123' };
     this.props.login({user})
       .fail(err => console.log(err));
@@ -38,18 +30,23 @@ class ArtistsIndex extends Component {
   render() {
     const { artists, children, currentUser } = this.props;
     return (
-      <section className="artist-index">
-        <div className="video-container">
-          <h3>Discover Your favorite Tunes!</h3>
-          {!currentUser ? this.demoButton() : ""}
-          <video className="video" src="http://res.cloudinary.com/njohnson90/video/upload/ac_none,vc_auto,fl_lossy,q_60,w_1280/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.webm" autoPlay muted loop/>
+      <section className="flex w-100 flex-column items-center mt4">
+        <div className="w-100 relative left-0 top-0 tc overflow-hidden" >
+          <div className=' absolute z-3 left-0 top-0 w-100 h-100 overflow-auto bg-black-50 flex flex-column justify-center items-center'>
+            <h1 className='f1 white b w-100 tc'>Discover Your favorite Tunes!</h1>
+            {!currentUser ? this.demoButton() : ""}
+          
+          </div>
+          <video className="w-100 " src="http://res.cloudinary.com/njohnson90/video/upload/ac_none,vc_auto,fl_lossy,q_60,w_1280/Steven_Wilson_-_The_Holy_Drinker_Live_in_Frankfurt_online-video-cutter.com_pogpnj.webm" autoPlay muted loop/>
         </div>
-        <div className='artist-search'>
-          <h1>Find Artists to Follow</h1>
-          <SearchContainer className='search-container'/>
+        <div className='w-100 w-80-ns pv3 ph4 flex justify-around items-center'>
+          <h1 className='w-50 mr3 f2'>Find Artists to Follow</h1>
+          <div className='w-50'>
+            <SearchContainer/>
+          </div>
         </div>
-        <div className="artist-display">
-          <ul className='artist-profiles-container'>
+        <div className="f4 b w-100 tc flex flex-column">
+          <ul className='flex justify-around flex-wrap'>
             {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} image={artist.image_url} />)}
           </ul>
 

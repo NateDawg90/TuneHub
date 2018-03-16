@@ -34,7 +34,7 @@ class ArtistDetail extends React.Component {
       if (this.getFollowState() === "follow") {
         return (
             <button
-              className='pa2 ph3 white f5 bg-purple b br4 shadow-3 bg-animate pointer hover-bg-light-gray link'
+              className='pa2 ph3 white f5 bg-purple b br4 shadow-hover outline-0'
               onClick={this.handleFollow}>
               Follow
             </button>
@@ -42,7 +42,7 @@ class ArtistDetail extends React.Component {
       } else {
         return (
             <button
-              className=' pa2 ph3 ma1 white f5 bg-purple b br4 shadow-3 bg-animate pointer hover-bg-light-gray'
+              className='ma1 pa2 ph3 white f5 bg-purple b br4 shadow-hover outline-0'
               onClick={this.handleUnFollow}>
               Unfollow
             </button>
@@ -64,6 +64,7 @@ class ArtistDetail extends React.Component {
 
 
   image(){
+    console.log(this.props.artist.image_url)
     return (
     <div className="detail-image">
       <img  src={this.props.artist.image_url}></img>
@@ -80,7 +81,7 @@ class ArtistDetail extends React.Component {
 
   render(){
     return (
-      <div className='w-80-ns pt5 mt4 ph4 flex flex-wrap top-1'>
+      <div className='w-80-ns pt5 mt4 mb5 ph4 flex flex-wrap top-1'>
         <div className='flex justify-between pb3 mb3 w-100 bb bw2'>
           <div className='bg-light-gray border-box ba bw1 b--gray  flex flex-column w-40'>
             <h2 className='bb bw1 f2 b ma4'>{this.props.artist.name}</h2>

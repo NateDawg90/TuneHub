@@ -1,5 +1,5 @@
 import React from 'react';
-import ArtistIndexItem from './../artists/artist_index_item';
+import ArtistIndexItem from './../artists/profile_artist_item';
 
 class FanDetail extends React.Component {
   constructor(props){

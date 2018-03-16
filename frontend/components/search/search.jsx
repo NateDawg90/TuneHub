@@ -13,23 +13,18 @@ class Search extends React.Component {
     return e => {
       this.setState({ ['searchParams']: e.target.value });
       this.props.updateSearch(e.target.value);
-
     };
   }
 
   render() {
     return(
-      <div>
-        <form className='search-form'>
+      <div className='w-100 flex items-center'>
           <input
-            className='search-input'
+            className='f4 flex-auto'
             type='text'
             placeholder='Search'
             onChange={this.update()} />
-          <i className="fa fa-search search-icon"
-            aria-hidden="true"
-            onClick={this.update} ></i>
-        </form>
+          <i className="fa fa-search f4 ml1" aria-hidden="true"/>
       </div>
     );
   }

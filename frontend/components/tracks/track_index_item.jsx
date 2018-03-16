@@ -55,7 +55,7 @@ class TrackIndexItem extends React.Component {
         <div className="flex item-center">
 
           <button
-            className="flex items-center bw0 bg-transparent outline-0"
+            className="flex items-center bw0 bg-transparent pointer outline-0"
             onClick={this.playPause}>{this.playPauseIcon()}
           </button>
 
