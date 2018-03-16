@@ -30,8 +30,8 @@ class ArtistsIndex extends Component {
   render() {
     const { artists, children, currentUser } = this.props;
     return (
-      <section className="flex w-100 flex-column items-center mt4">
-        <div className="w-100 relative left-0 top-0 tc overflow-hidden" >
+      <section className="flex w-100 flex-column items-center mb5">
+        <div className="w-100 relative left-0 top-0 tc" >
           <div className=' absolute z-3 left-0 top-0 w-100 h-100 overflow-auto bg-black-50 flex flex-column justify-center items-center'>
             <h1 className='f1 white b w-100 tc'>Discover Your favorite Tunes!</h1>
             {!currentUser ? this.demoButton() : ""}
