@@ -27,8 +27,6 @@ const Root = ({ store }) => {
     }
   };
 
-
-
   const _requestUserInfo = () => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {

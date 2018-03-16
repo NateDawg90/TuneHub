@@ -1,5 +1,5 @@
 import React from 'react';
-import ArtistIndexItem from './../artists/artist_index_item';
+import ArtistIndexItem from './../artists/profile_artist_item';
 
 class FanDetail extends React.Component {
   constructor(props){
@@ -16,23 +16,23 @@ class FanDetail extends React.Component {
   render(){
     const followedArtists = (this.props.currentUser ? this.props.currentUser.followed_artists : []);
     return (
-      <div className="fan-detail">
-        <div className="fan-header">
-          <div className='fan-name-container'>
+      <div className="w-100 w-80-ns flex flex-column mt5 ph3 ph2-ns" > 
+        <div className="flex justify-between items-center mb3">
+          <div className='f3'>
             {this.fanHeader()}
           </div>
           <div
-            className='followed-artists'>{followedArtists.length}
+            className='f4'>{followedArtists.length}
             {followedArtists.length === 1 ? "Followed Artist" : " Followed Artists"}
           </div>
         </div>
 
-        <ul className='followed-artists-container'>
+        <ul className='ba b--black bw2'>
           {followedArtists.map(artist => {
             return (
-              <div key={artist.id} className='followed-artist-link'>
+              <div key={artist.id} className='flex flex-column items-center w-100'>
                 <ArtistIndexItem  artist={artist} image={artist.image_url} />
-                <div className='artist-divider'></div>
+                <div className='w-100 ba bw1 b--black'></div>
               </div>
             );
           })}

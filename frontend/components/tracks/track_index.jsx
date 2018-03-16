@@ -8,8 +8,6 @@ class TrackIndex extends React.Component {
     this.state = {};
   }
 
-
-
   artistTracks(){
     let that = this;
     return (
@@ -54,7 +52,7 @@ class TrackIndex extends React.Component {
   render(){
     let that = this;
     return (
-      <div className="tracks-box">
+      <div className="mh3">
         <ul>
           {this.artistTracks()}
         </ul>

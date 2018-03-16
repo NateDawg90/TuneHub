@@ -39,23 +39,23 @@ class TrackIndexItem extends React.Component {
   playPauseIcon() {
     if (this.state.playing) {
       return(
-        <i className="fa fa-pause-circle"></i>
+        <i className="fa fa-pause-circle f2 black"></i>
       );
     } else {
       return(
-        <i className="fa fa-play-circle" ></i>
+        <i className="fa fa-play-circle f2 black" ></i>
       );
     }
   }
 
   render() {
     return (
-      <div className="track-item">
-        <label className="title">{this.props.track.name}</label>
-        <div className="track-player">
+      <div className="flex justify-between items-center ma2">
+        <label >{this.props.track.name}</label>
+        <div className="flex item-center">
 
           <button
-            className="mini-play-button"
+            className="flex items-center bw0 bg-transparent pointer outline-0"
             onClick={this.playPause}>{this.playPauseIcon()}
           </button>
 

@@ -22,9 +22,5 @@ const App = ({ children }) => (
     <TrackPlayerContainer />
   </div>
 );
-// <Footer />
-// <footer className="page-footer">
-//   TuneHub All Rights Reserved
-// </footer>
 
 export default App;

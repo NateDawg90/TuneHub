@@ -34,11 +34,11 @@ class TrackPlayer extends React.Component {
   playPauseIcon() {
     if (this.state.playing) {
       return(
-        <i className="fa fa-pause"></i>
+        <i className="fa fa-pause f3 white dim"></i>
       );
     } else {
       return(
-        <i className="fa fa-play" ></i>
+        <i className="fa fa-play f3 white dim" ></i>
       );
     }
   }
@@ -53,53 +53,51 @@ class TrackPlayer extends React.Component {
 
   volume(){
     return(
-      <i className="fa fa-volume-up" aria-hidden="true"></i>
+      <i className="fa fa-volume-up f3 white ma2" aria-hidden="true"></i>
     );
   }
 
   render(){
     return (
-      <div className="taskbar">
+      <div className="w-100 z-5 bg-black fixed flex items-center bottom-0 footer">
         <ReactPlayer url={this.props.trackPlayer.track_url}
           ref={player => { this.player = player; }}
           playing={this.state.playing}
           width={0}
           height={0}
           hidden={false}
-          className="sound-player"
           volume={this.state.volume}
           onProgress={this.onProgress}
         />
-        <div className='bottom-centered-content'>
-          <section className="track-controls">
+        <div className='flex items-center justify-around h-100 w-100'>
+          <section className="flex items-center ">
             <button
-              className="play-button"
+              className="bg-black bw0 outline-0 pointer mr3"
               onClick={this.playPause}>{this.playPauseIcon()}
             </button>
 
-            <label className="track-slider">
+            <label className="flex items-center">
               {this.volume()}
               <input type="range" min={0} max={1} step='any'
                 value={this.state.volume}
-                onChange={this.setVolume}
-                className="input-slider"/>
+                onChange={this.setVolume}/>
             </label>
           </section>
 
-          <section className="artist-info-section">
+          <section className="h-100 flex items-center justify-around">
             <img src={this.props.trackPlayerArtist.image_url}
-              className="small-artist-image"></img>
+              className="h-100 bn "></img>
             <Link to={`/artists/${this.props.trackPlayerArtist.id}`}
-              className="link-to-artist">
-              <div className='artist-thumbnail-name'>{this.props.trackPlayerArtist.name}</div>
-              <div className='artist-song-separator'>{this.props.trackPlaying ? " - " : ""}</div>
-              <div className='track-thumbnail-name'>{this.props.trackPlayer.name}</div>
+              className="flex no-underline white ml3 dim">
+              <div className='b ml2 '>{this.props.trackPlayerArtist.name}</div>
+              <div className='ml2'>{this.props.trackPlaying ? " - " : ""}</div>
+              <div className='ml2'>{this.props.trackPlayer.name}</div>
             </Link>
           </section>
         </div>
 
 
-        <div className='small-logo'>TH</div>
+        <div className='bungee white ml-auto mr2 f3'>TH</div>
       </div>
     );
   }

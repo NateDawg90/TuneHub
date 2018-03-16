@@ -3,21 +3,11 @@ import { Link } from 'react-router';
 
 const ArtistIndexItem = ({ artist, router }) => {
   return (
-    <div className="artist-index-item">
-      <Link to={`/artists/${artist.id}`} className='sample-link'>
-        <img className='sample-image' src={artist.image_url}></img>
-        <div className='sample-name'>{artist.name}</div>
+      <Link to={`/artists/${artist.id}`} className='no-underline bn f3 black ma1 artist-width'>
+        <img className=' detail-image link dim black' src={artist.image_url}></img>
+        <div className='f4 b mr3 '>{artist.name}</div>
       </Link>
-    </div>
-
   );
 };
-// <div className={"play-button-image"}
-//   onClick={this.playSong(this.props.artist.song, this.props.artist)}>
-//   <span className="fa-stack fa-lg">
-//     <i className="fa fa-circle fa-stack-2x"></i>
-//     <i className="fa fa-play fa-stack-1x"></i>
-//   </span>
-// </div>
 
 export default ArtistIndexItem;

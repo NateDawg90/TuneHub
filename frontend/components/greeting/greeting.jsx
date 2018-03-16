@@ -14,36 +14,49 @@ class Greeting extends React.Component {
 
   sessionLinks() {
     return (
-      <nav className="login-signup">
-        <Link className='login-button' to="/login" activeClassName="current">Login</Link>
-        <div className='or'>or</div>
-        <Link className='login-button' to="/signup" activeClassName="current">Sign up!</Link>
+      <nav className="flex items-center mh3">
+        <Link className='pa2 mr2 white f5 b br3 bg-purple no-underline shadow-1 relative shadow-hover' to="/login" activeClassName="current">
+          Login
+        </Link>
+        or
+        <Link className='pa2 ml2 white f5 b br3 bg-purple no-underline shadow-1 relative shadow-hover' to="/signup" activeClassName="current">
+          Sign up!
+        </Link>
       </nav>
     );
   }
 
+  fix() {
+    var par = this.parentNode;
+    var next = this.nextSibling;
+    par.removeChild(this);
+    setTimeout(function() {par.insertBefore(this, next);}, 0)
+  }
+
   personalGreeting(currentUser, logout) {
     return (
-      <hgroup className="header-group">
+      <nav className="flex justify-between items-center mh3">
 
-        <h2 className="hi">Hi, </h2>
-        <Link to={`/fans/${currentUser.id}`} className='profile-link'>
-          <div className='username'>{currentUser.username}</div>
+        <h2 className='mr2'>Hi, </h2>
+        <Link to={`/fans/${currentUser.id}`} >
+          <div>{currentUser.username}</div>
         </Link>
-        <button className="logout-button" onClick={this.handleLogout}>Log Out</button>
-      </hgroup>
+        <Link className="pa2 ml2 white f5 b br3 bg-purple no-underline shadow-1 relative shadow-hover" onClick={this.handleLogout}>
+          Log Out
+        </Link>
+      </nav>
     );
   }
 
   render() {
     return (
-      <div className='header'>
-        <div className="left-nav">
-          <Link to="/" className="header-link">
-            <div className='splash-logo'></div>
-            <h1 className='tunehub'>TuneHub</h1>
+      <div className='flex justify-between items-center w-100 black bg-white fixed bb b--grey border-box header-shadow z-5'>
+        <div className="flex items-center">
+          <Link to="/" className="no-underline bungee f2 flex items-center black b ma1">
+            <div className='splash-logo mh2'></div>
+            <h2 className='ml2'>TuneHub</h2>
           </Link>
-          <span className='slogan'>Connecting people with tunes and their creators
+          <span className='f6 b self-end ml3 mb1 purple'>Connecting people with tunes and their creators
           </span>
         </div>
         {this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()}
