@@ -36,7 +36,7 @@ gem 'rspotify'
 
 gem 'rest-client'
 
-gem "rack", ">= 2.0.6"
+gem "rack", ">= 2.0.8"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
