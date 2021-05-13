@@ -1,5 +1,5 @@
 {
-  "name": "Bandcamp",
+  "name": "Tunehub",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
@@ -13,19 +13,20 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NateDawg90/BandCamp.git"
+    "url": "git+https://github.com/NateDawg90/TuneHub.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NateDawg90/BandCamp/issues"
+    "url": "https://github.com/NateDawg90/TuneHub/issues"
   },
-  "homepage": "https://github.com/NateDawg90/BandCamp#readme",
+  "homepage": "https://github.com/NateDawg90/TuneHub#readme",
   "dependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
