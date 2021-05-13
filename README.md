@@ -51,8 +51,13 @@ TuneHub is a single-page application built on Rails and React.js, with many depe
 To run the app in development, open a terminal in the project root and type:
 
 npm install
-npm run watch
 bundle install
+rails s
+npm run watch
+
+Visit the app at localhost:3000.
+
+Make changes and iterate, save files, and watch as the app updates and hot reloads in real time.
 
 ### User authentication
 
