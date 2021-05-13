@@ -46,6 +46,14 @@ TuneHub is a single-page application built on Rails and React.js, with many depe
 - [Frontend technology][frontend]
 - [File storage][file storage] via Amazon Cloudinary
 
+### Development 
+
+To run the app in development, open a terminal in the project root and type:
+
+npm install
+npm run watch
+bundle install
+
 ### User authentication
 
 * User authentication based on hashed password (BCrypt) for high level database security.

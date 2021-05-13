@@ -15,6 +15,7 @@ require_relative '1000_artists'
 # Track.create(name: "Not a Bad Thing", artist_id: a.id, track_url: "https://p.scdn.co/mp3-preview/6b17b9987d6e5c2eaafb55ff2fe555294722dd2e")
 # Track.create(name: "XO", artist_id: a.id, track_url: "https://p.scdn.co/mp3-preview/df9b5efc4577e9ef65491b5a3f74f3cf428297d3")
 
+RSpotify.authenticate("75f8328ee2214a4287387b52816dbc7f", "f12988fbf16246d693e462d6230abd3c")
 
 @list.each do |artist|
   begin
@@ -25,10 +26,8 @@ require_relative '1000_artists'
     sample_album = artist.albums.first
     sample_image = sample_album.images.first["url"]
     tracks = sample_album.tracks
-
     sample_artist = User.create(name: name, description: genres, user_type: "artist",
                                 username: artist.name, password: 123456, image_url: sample_image)
-
     tracks.each do |track|
       preview_url = track.preview_url
       Track.create(track_url: preview_url, name: track.name, artist_id: sample_artist.id)
